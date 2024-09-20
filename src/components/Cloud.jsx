@@ -1,7 +1,14 @@
-import React from "react";
+import React, { useState, useRef } from "react";
 import { useGLTF } from "@react-three/drei";
+import {
+  Selection,
+  Select,
+  EffectComposer,
+  Outline,
+} from "@react-three/postprocessing";
+//this element is for testing hover effect
 
-function Tile({ model, position, rotation }) {
+function Cloud({ model, position, rotation, hoverOn, hoverOff }) {
   const { nodes, materials } = useGLTF("/" + model + ".gltf");
   return (
     <mesh
@@ -15,4 +22,4 @@ function Tile({ model, position, rotation }) {
   );
 }
 
-export default Tile;
+export default Cloud;
