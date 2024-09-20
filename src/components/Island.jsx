@@ -1,7 +1,4 @@
 import React, { useState } from "react";
-import { Canvas, useLoader } from "@react-three/fiber";
-import { GLTFLoader } from "three/addons/loaders/GLTFLoader.js";
-import { TextureLoader } from "three";
 import Tile from "./Tile";
 import Cloud from "./Cloud";
 import {
@@ -11,7 +8,7 @@ import {
   Outline,
 } from "@react-three/postprocessing";
 
-function Island({ position }) {
+function Island({ position, tileset }) {
   //hover effect state
   const [hovered, hover] = useState(null);
 
@@ -39,7 +36,7 @@ function Island({ position }) {
 
         {/* hitbox sphere for outline ffect */}
         <mesh
-          position={[3, -0.5, 1.5]}
+          position={object_group([3, -0.5, 1.5])}
           onPointerEnter={() => hover(true)}
           onPointerOut={() => hover(false)}
         >
@@ -49,91 +46,17 @@ function Island({ position }) {
 
         {/*the island*/}
         <Select enabled={hovered}>
-          <Tile
-            model="hex_coast_A"
-            position={object_group([2, 0, 0])}
-            rotation={[0, (4 * -Math.PI) / 3, 0]}
-          />
-          <Tile
-            model="hex_coast_B"
-            position={object_group([0, 0, 0])}
-            rotation={[0, (2 * -Math.PI) / 3, 0]}
-          />
-          <Tile
-            model="hex_coast_D"
-            position={object_group([1, 0, -Math.sqrt(3)])}
-            rotation={[0, (4 * -Math.PI) / 3, 0]}
-          />
-          <Tile
-            model="hex_coast_E"
-            position={object_group([4, 0, 0])}
-            rotation={[0, (2 * -Math.PI) / 3, 0]}
-          />
-          <Tile
-            model="hex_coast_C"
-            position={object_group([-1, 0, Math.sqrt(3)])}
-            rotation={[0, (2 * -Math.PI) / 3, 0]}
-          />
-          <Tile
-            model="hex_coast_D"
-            position={object_group([3, 0, -Math.sqrt(3)])}
-            rotation={[0, (3 * -Math.PI) / 3, 0]}
-          />
-          <Tile
-            model="hex_coast_C"
-            position={object_group([5, 0, -Math.sqrt(3)])}
-            rotation={[0, (4 * -Math.PI) / 3, 0]}
-          />
-          <Tile
-            model="hex_coast_B"
-            position={object_group([6, 0, 0])}
-            rotation={[0, (4 * -Math.PI) / 3, 0]}
-          />
-          <Tile
-            model="hex_coast_D"
-            position={object_group([7, 0, Math.sqrt(3)])}
-            rotation={[0, (0 * -Math.PI) / 3, 0]}
-          />
-          <Tile
-            model="hex_coast_E"
-            position={object_group([5, 0, Math.sqrt(3)])}
-            rotation={[0, (5 * -Math.PI) / 3, 0]}
-          />
-          <Tile
-            model="hex_coast_D"
-            position={object_group([6, 0, 2 * Math.sqrt(3)])}
-            rotation={[0, (0 * -Math.PI) / 3, 0]}
-          />
-          <Tile
-            model="hex_coast_B"
-            position={object_group([4, 0, 2 * Math.sqrt(3)])}
-            rotation={[0, (0 * -Math.PI) / 3, 0]}
-          />
-          <Tile
-            model="hex_coast_A"
-            position={object_group([2, 0, 2 * Math.sqrt(3)])}
-            rotation={[0, (0 * -Math.PI) / 3, 0]}
-          />
-          <Tile
-            model="hex_coast_D"
-            position={object_group([1, 0, 3 * Math.sqrt(3)])}
-            rotation={[0, (1 * -Math.PI) / 3, 0]}
-          />
-          <Tile
-            model="hex_coast_B"
-            position={object_group([0, 0, 2 * Math.sqrt(3)])}
-            rotation={[0, (1 * -Math.PI) / 3, 0]}
-          />
-          <Tile
-            model="hex_grass"
-            position={object_group([1, 0, 1 * Math.sqrt(3)])}
-            rotation={[0, (1 * -Math.PI) / 3, 0]}
-          />
-          <Tile
-            model="hex_grass"
-            position={object_group([3, 0, 1 * Math.sqrt(3)])}
-            rotation={[0, (1 * -Math.PI) / 3, 0]}
-          />
+          {/* load island from json */}
+          {tileset.map((tile, i) => {
+            return (
+              <Tile
+                model={tile.model}
+                position={object_group(tile.position)}
+                rotation={tile.rotation}
+                key={tile.position}
+              />
+            );
+          })}
           {/*doodads*/}
           <Tile
             model="building_blacksmith_blue"

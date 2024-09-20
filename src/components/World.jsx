@@ -4,6 +4,10 @@ import { OrbitControls } from "@react-three/drei";
 import { GLTFLoader } from "three/addons/loaders/GLTFLoader.js";
 import { TextureLoader } from "three";
 import Island from "./Island";
+import IslandTest from "./IslandTest";
+
+//js island objects
+import testIsland from "../data/testIsland";
 
 function World() {
   return (
@@ -17,7 +21,12 @@ function World() {
         intensity={Math.PI}
       />
       <ambientLight intensity={Math.PI / 2} />
-      <Island position={[0, 0, 0]} />
+      <Island position={[0, 0, 0]} tileset={testIsland} />
+      <IslandTest position={[10, 0, 0]} tileset={testIsland} />
+      <IslandTest position={[20, 0, 0]} tileset={testIsland} />
+      <IslandTest position={[20, 0, 10]} tileset={testIsland} />
+      <IslandTest position={[10, 0, 10]} tileset={testIsland} />
+      <IslandTest position={[0, 0, 10]} tileset={testIsland} />
     </Canvas>
   );
 }
