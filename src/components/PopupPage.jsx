@@ -9,7 +9,7 @@ function PopupPage({ active, close, page }) {
           X
         </button>
         {/* ROUTER GOES HERE */}
-        <h2>{page}</h2>
+        <h1>Submarine Voyage</h1>
       </article>
     </div>
   );
