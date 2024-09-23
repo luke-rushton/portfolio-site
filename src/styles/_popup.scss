@@ -1,13 +1,4 @@
-.popup {
-  height: 95%;
-  width: 95%;
-  z-index: 99;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  position: fixed;
-  background-color: azure;
-}
+@import "global_brand";
 
 //move this somewhere else maybe?
 .invisible {
@@ -16,4 +7,32 @@
 //this isn't strictly necessary, but it helps code readability
 .visible {
   display: block;
+}
+
+.popup-mask {
+  //positioning
+  box-sizing: border-box;
+  height: 100%;
+  width: 100%;
+  padding: 1rem;
+  z-index: 99;
+  position: fixed;
+}
+
+.popup {
+  //positioning
+  box-sizing: border-box;
+  height: 100%;
+  width: 100%;
+  //styling
+  border-radius: $radius-medium;
+  background-color: $background;
+  backdrop-filter: brightness(90%) blur(20px);
+
+  //could make button its own component?
+  .close-button {
+    position: absolute;
+    right: 0.75rem;
+    top: 0.75rem;
+  }
 }

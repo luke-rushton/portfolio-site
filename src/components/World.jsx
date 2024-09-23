@@ -65,7 +65,7 @@ function World() {
             }}
           >
             <sphereGeometry args={[4, 8, 8]} />
-            <meshStandardMaterial opacity={0.4} transparent />
+            <meshStandardMaterial opacity={0} transparent />
           </mesh>
 
           {/* the world */}
