@@ -1,5 +1,5 @@
 import World from "./components/World";
-import "./styles.css";
+import "./App.scss";
 
 function App() {
   return (
