@@ -34,5 +34,10 @@
     position: absolute;
     right: 0.75rem;
     top: 0.75rem;
+    aspect-ratio: 1;
+    background-color: $background-dark;
+    border-radius: 50%;
+    border: unset;
+    color: $background;
   }
 }
