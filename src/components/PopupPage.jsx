@@ -8,6 +8,7 @@ function PopupPage({ active, close, page }) {
         <button className="close-button" onClick={close}>
           <img src="/x-mark.svg" />
         </button>
+        <h1>{page}</h1>
         {/* ROUTER GOES HERE */}
       </article>
     </div>

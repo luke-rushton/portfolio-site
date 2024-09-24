@@ -24,6 +24,10 @@ import PopupPage from "./PopupPage";
 function World() {
   //hover effect state
   const [hovered, hover] = useState(null);
+  const [hoveredOne, hoverOne] = useState(null);
+  const [hoveredTwo, hoverTwo] = useState(null);
+  const [hoveredThree, hoverThree] = useState(null);
+  const [hoveredFour, hoverFour] = useState(null);
   //Popup Visibility
   const [visibility, isVisible] = useState("invisible");
   //track what page we want to load based on clicked island
@@ -42,7 +46,6 @@ function World() {
           { name: "backward", keys: ["ArrowDown", "s", "S"] },
           { name: "left", keys: ["ArrowLeft", "a", "A"] },
           { name: "right", keys: ["ArrowRight", "d", "D"] },
-          { name: "jump", keys: ["Space"] },
         ]}
       >
         <Canvas>
@@ -63,7 +66,7 @@ function World() {
               />
             </EffectComposer>
 
-            {/* hitbox sphere for outline ffect */}
+            {/* hitbox spheres for outline ffect */}
             <mesh
               position={[3, -0.5, 1.5]}
               onPointerEnter={() => hover(true)}
@@ -74,7 +77,59 @@ function World() {
               }}
             >
               <sphereGeometry args={[4, 8, 8]} />
-              <meshStandardMaterial opacity={0} transparent />
+              <meshStandardMaterial opacity={0.4} transparent />
+            </mesh>
+
+            <mesh
+              position={[-4, -0.5, -10]}
+              onPointerEnter={() => hoverOne(true)}
+              onPointerOut={() => hoverOne(false)}
+              onClick={() => {
+                isVisible("visible");
+                setPage("test-one");
+              }}
+            >
+              <sphereGeometry args={[4, 8, 8]} />
+              <meshStandardMaterial opacity={0.4} transparent />
+            </mesh>
+
+            <mesh
+              position={[10, -0.5, 7]}
+              onPointerEnter={() => hoverTwo(true)}
+              onPointerOut={() => hoverTwo(false)}
+              onClick={() => {
+                isVisible("visible");
+                setPage("test-two");
+              }}
+            >
+              <sphereGeometry args={[4, 8, 8]} />
+              <meshStandardMaterial opacity={0.4} transparent />
+            </mesh>
+
+            <mesh
+              position={[15, -0.5, -4]}
+              onPointerEnter={() => hoverThree(true)}
+              onPointerOut={() => hoverThree(false)}
+              onClick={() => {
+                isVisible("visible");
+                setPage("test-three");
+              }}
+            >
+              <sphereGeometry args={[4, 8, 8]} />
+              <meshStandardMaterial opacity={0.4} transparent />
+            </mesh>
+
+            <mesh
+              position={[-9, -0.5, 9]}
+              onPointerEnter={() => hoverFour(true)}
+              onPointerOut={() => hoverFour(false)}
+              onClick={() => {
+                isVisible("visible");
+                setPage("test-four");
+              }}
+            >
+              <sphereGeometry args={[4, 8, 8]} />
+              <meshStandardMaterial opacity={0.4} transparent />
             </mesh>
 
             {/* the world */}
@@ -85,26 +140,34 @@ function World() {
                 propset={testProps}
               />
             </Select>
-            <Island
-              position={[8, 0, 6]}
-              tileset={tempIsland}
-              propset={emptyProps}
-            />
-            <Island
-              position={[-11, 0, 7]}
-              tileset={tempIsland}
-              propset={emptyProps}
-            />
-            <Island
-              position={[13, 0, -5]}
-              tileset={tempIsland}
-              propset={emptyProps}
-            />
-            <Island
-              position={[-6, 0, -12]}
-              tileset={tempIsland}
-              propset={emptyProps}
-            />
+            <Select enabled={hoveredTwo}>
+              <Island
+                position={[8, 0, 6]}
+                tileset={tempIsland}
+                propset={emptyProps}
+              />
+            </Select>
+            <Select enabled={hoveredFour}>
+              <Island
+                position={[-11, 0, 7]}
+                tileset={tempIsland}
+                propset={emptyProps}
+              />
+            </Select>
+            <Select enabled={hoveredThree}>
+              <Island
+                position={[13, 0, -5]}
+                tileset={tempIsland}
+                propset={emptyProps}
+              />
+            </Select>
+            <Select enabled={hoveredOne}>
+              <Island
+                position={[-6, 0, -12]}
+                tileset={tempIsland}
+                propset={emptyProps}
+              />
+            </Select>
           </Selection>
         </Canvas>
       </KeyboardControls>
