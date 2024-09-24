@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Canvas } from "@react-three/fiber";
 import { OrbitControls } from "@react-three/drei";
 import Island from "./Island";
+import Ocean from "./Ocean";
 import {
   Selection,
   Select,
@@ -12,6 +13,8 @@ import {
 //js island objects
 import testIsland from "../data/testIsland";
 import testProps from "../data/testProps";
+import tempIsland from "../data/tempIsland";
+import emptyProps from "../data/emptyProps";
 
 //test objects
 import Prop from "./Prop";
@@ -34,14 +37,9 @@ function World() {
       />
       <Canvas>
         <OrbitControls />
-        <spotLight
-          position={[16, 10, 16]}
-          angle={0.15}
-          penumbra={1}
-          decay={0}
-          intensity={Math.PI}
-        />
         <ambientLight intensity={Math.PI / 2} />
+        {/* ocean */}
+        <Ocean />
         <Selection>
           {/*outline effect */}
           <EffectComposer multisampling={8} autoClear={false}>
@@ -76,6 +74,11 @@ function World() {
               propset={testProps}
             />
           </Select>
+          <Island
+            position={[6, 0, 5]}
+            tileset={tempIsland}
+            propset={emptyProps}
+          />
         </Selection>
       </Canvas>
     </div>

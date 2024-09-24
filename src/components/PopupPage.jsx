@@ -6,10 +6,9 @@ function PopupPage({ active, close, page }) {
     <div className={`popup-mask ${active}`}>
       <article className={`popup`}>
         <button className="close-button" onClick={close}>
-          X
+          <img src="/x-mark.svg" />
         </button>
         {/* ROUTER GOES HERE */}
-        <h1>Submarine Voyage</h1>
       </article>
     </div>
   );
