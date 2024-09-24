@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Canvas } from "@react-three/fiber";
-import { OrbitControls } from "@react-three/drei";
+import { OrbitControls, KeyboardControls } from "@react-three/drei";
 import Island from "./Island";
 import Ocean from "./Ocean";
 import {
@@ -9,6 +9,7 @@ import {
   EffectComposer,
   Outline,
 } from "@react-three/postprocessing";
+import Player from "./Player";
 
 //js island objects
 import testIsland from "../data/testIsland";
@@ -35,52 +36,78 @@ function World() {
         close={() => isVisible("invisible")}
         page={page}
       />
-      <Canvas>
-        <OrbitControls />
-        <ambientLight intensity={Math.PI / 2} />
-        {/* ocean */}
-        <Ocean />
-        <Selection>
-          {/*outline effect */}
-          <EffectComposer multisampling={8} autoClear={false}>
-            <Outline
-              blur
-              visibleEdgeColor="white"
-              hiddenEdgeColor="white"
-              edgeStrength={100}
-              width={1000}
-            />
-          </EffectComposer>
+      <KeyboardControls
+        map={[
+          { name: "forward", keys: ["ArrowUp", "w", "W"] },
+          { name: "backward", keys: ["ArrowDown", "s", "S"] },
+          { name: "left", keys: ["ArrowLeft", "a", "A"] },
+          { name: "right", keys: ["ArrowRight", "d", "D"] },
+          { name: "jump", keys: ["Space"] },
+        ]}
+      >
+        <Canvas>
+          <OrbitControls />
+          <Player />
+          <ambientLight intensity={Math.PI / 2} />
+          {/* ocean */}
+          <Ocean />
+          <Selection>
+            {/*outline effect */}
+            <EffectComposer multisampling={8} autoClear={false}>
+              <Outline
+                blur
+                visibleEdgeColor="white"
+                hiddenEdgeColor="white"
+                edgeStrength={100}
+                width={1000}
+              />
+            </EffectComposer>
 
-          {/* hitbox sphere for outline ffect */}
-          <mesh
-            position={[3, -0.5, 1.5]}
-            onPointerEnter={() => hover(true)}
-            onPointerOut={() => hover(false)}
-            onClick={() => {
-              isVisible("visible");
-              setPage("test");
-            }}
-          >
-            <sphereGeometry args={[4, 8, 8]} />
-            <meshStandardMaterial opacity={0} transparent />
-          </mesh>
+            {/* hitbox sphere for outline ffect */}
+            <mesh
+              position={[3, -0.5, 1.5]}
+              onPointerEnter={() => hover(true)}
+              onPointerOut={() => hover(false)}
+              onClick={() => {
+                isVisible("visible");
+                setPage("test");
+              }}
+            >
+              <sphereGeometry args={[4, 8, 8]} />
+              <meshStandardMaterial opacity={0} transparent />
+            </mesh>
 
-          {/* the world */}
-          <Select enabled={hovered}>
+            {/* the world */}
+            <Select enabled={hovered}>
+              <Island
+                position={[0, 0, 0]}
+                tileset={testIsland}
+                propset={testProps}
+              />
+            </Select>
             <Island
-              position={[0, 0, 0]}
-              tileset={testIsland}
-              propset={testProps}
+              position={[8, 0, 6]}
+              tileset={tempIsland}
+              propset={emptyProps}
             />
-          </Select>
-          <Island
-            position={[6, 0, 5]}
-            tileset={tempIsland}
-            propset={emptyProps}
-          />
-        </Selection>
-      </Canvas>
+            <Island
+              position={[-11, 0, 7]}
+              tileset={tempIsland}
+              propset={emptyProps}
+            />
+            <Island
+              position={[13, 0, -5]}
+              tileset={tempIsland}
+              propset={emptyProps}
+            />
+            <Island
+              position={[-6, 0, -12]}
+              tileset={tempIsland}
+              propset={emptyProps}
+            />
+          </Selection>
+        </Canvas>
+      </KeyboardControls>
     </div>
   );
 }

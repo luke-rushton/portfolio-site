@@ -1,5 +1,4 @@
 import React from "react";
-import { BoxGeometry } from "three";
 
 function Ocean() {
   return (
