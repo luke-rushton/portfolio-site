@@ -1,6 +1,12 @@
-import React, { useState } from "react";
-import { Canvas } from "@react-three/fiber";
-import { OrbitControls, KeyboardControls } from "@react-three/drei";
+import React, { useRef, useState } from "react";
+import { Canvas, useFrame } from "@react-three/fiber";
+import {
+  OrbitControls,
+  KeyboardControls,
+  CameraControls,
+  PerspectiveCamera,
+  Bvh,
+} from "@react-three/drei";
 import Island from "./Island";
 import Ocean from "./Ocean";
 import {
@@ -20,6 +26,7 @@ import emptyProps from "../data/emptyProps";
 //test objects
 import Prop from "./Prop";
 import PopupPage from "./PopupPage";
+import { Perf } from "r3f-perf";
 
 function World() {
   //hover effect state
@@ -32,6 +39,9 @@ function World() {
   const [visibility, isVisible] = useState("invisible");
   //track what page we want to load based on clicked island
   const [page, setPage] = useState("");
+
+  //character position state
+  const [position, setPosition] = useState([0, 0, 0]);
 
   return (
     <div className="world">
@@ -48,24 +58,26 @@ function World() {
           { name: "right", keys: ["ArrowRight", "d", "D"] },
         ]}
       >
-        <Canvas>
-          <OrbitControls />
-          <Player />
+        <Canvas camera={{ position: [2, 2, 2], rotation: [0, 0, 0] }}>
+          <Perf />
+          <Player
+            position={position}
+            setPosition={(input) => setPosition(input)}
+          />
           <ambientLight intensity={Math.PI / 2} />
           {/* ocean */}
           <Ocean />
           <Selection>
-            {/*outline effect */}
-            <EffectComposer multisampling={8} autoClear={false}>
+            {/*outline effect THIS IS NOT PERFORMANT*/}
+            <EffectComposer multisampling={0} autoClear={false}>
               <Outline
                 blur
                 visibleEdgeColor="white"
                 hiddenEdgeColor="white"
-                edgeStrength={100}
+                edgeStrength={10}
                 width={1000}
               />
             </EffectComposer>
-
             {/* hitbox spheres for outline ffect */}
             <mesh
               position={[3, -0.5, 1.5]}
