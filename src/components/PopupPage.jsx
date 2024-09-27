@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { div } from "three/webgpu";
 //routing imports
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import { APP_FOLDER_NAME } from "../globals";
 import Home from "../pages/Home";
 import About from "../pages/About";
@@ -34,13 +34,12 @@ function PopupPage({ active, close, page }) {
         </button>
         {isLoaded ? <h1>{restData.title.rendered}</h1> : <h1>Loading</h1>}
         {/* ROUTER GOES HERE */}
-        <BrowserRouter basename={`/${APP_FOLDER_NAME}`}>
-          <Routes>
-            <Route path="/" exact element={<Home />} />
-            <Route path="/about" element={<About />} />
-            <Route path="/works" element={<Works />} />
-          </Routes>
-        </BrowserRouter>
+
+        <Routes>
+          <Route path="/" exact element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/works" element={<Works />} />
+        </Routes>
       </article>
     </div>
   );

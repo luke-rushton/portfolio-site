@@ -28,6 +28,10 @@ import Prop from "./Prop";
 import PopupPage from "./PopupPage";
 import { Perf } from "r3f-perf";
 
+//navigation
+import { BrowserRouter, useNavigate } from "react-router-dom";
+import { APP_FOLDER_NAME } from "../globals";
+
 function World() {
   //hover effect state
   const [hovered, hover] = useState(null);
@@ -39,7 +43,8 @@ function World() {
   const [visibility, isVisible] = useState("invisible");
   //track what page we want to load based on clicked island
   const [page, setPage] = useState("8");
-
+  //navigation
+  const navigate = useNavigate();
   //character position state
   const [position, setPosition] = useState([0, 0, 0]);
 
@@ -85,6 +90,7 @@ function World() {
               onClick={() => {
                 isVisible("visible");
                 setPage("8");
+                navigate("/");
               }}
             >
               <sphereGeometry args={[4, 8, 8]} />
@@ -98,6 +104,7 @@ function World() {
               onClick={() => {
                 isVisible("visible");
                 setPage("12");
+                navigate("/about");
               }}
             >
               <sphereGeometry args={[4, 8, 8]} />
@@ -111,6 +118,7 @@ function World() {
               onClick={() => {
                 isVisible("visible");
                 setPage("8");
+                navigate("/works");
               }}
             >
               <sphereGeometry args={[4, 8, 8]} />
@@ -124,6 +132,7 @@ function World() {
               onClick={() => {
                 isVisible("visible");
                 setPage("12");
+                navigate("/about");
               }}
             >
               <sphereGeometry args={[4, 8, 8]} />
@@ -137,6 +146,7 @@ function World() {
               onClick={() => {
                 isVisible("visible");
                 setPage("8");
+                navigate("/works");
               }}
             >
               <sphereGeometry args={[4, 8, 8]} />
