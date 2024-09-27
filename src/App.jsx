@@ -1,10 +1,13 @@
 import World from "./components/World";
 import "./App.scss";
+import { BrowserRouter } from "react-router-dom";
 
 function App() {
   return (
     <>
-      <World />
+      <BrowserRouter>
+        <World />
+      </BrowserRouter>
     </>
   );
 }
