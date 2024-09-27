@@ -38,7 +38,7 @@ function World() {
   //Popup Visibility
   const [visibility, isVisible] = useState("invisible");
   //track what page we want to load based on clicked island
-  const [page, setPage] = useState("");
+  const [page, setPage] = useState("8");
 
   //character position state
   const [position, setPosition] = useState([0, 0, 0]);
@@ -59,7 +59,6 @@ function World() {
         ]}
       >
         <Canvas camera={{ position: [2, 2, 2], rotation: [0, 0, 0] }}>
-          <Perf />
           <Player
             position={position}
             setPosition={(input) => setPosition(input)}
@@ -85,7 +84,7 @@ function World() {
               onPointerOut={() => hover(false)}
               onClick={() => {
                 isVisible("visible");
-                setPage("test");
+                setPage("8");
               }}
             >
               <sphereGeometry args={[4, 8, 8]} />
@@ -98,7 +97,7 @@ function World() {
               onPointerOut={() => hoverOne(false)}
               onClick={() => {
                 isVisible("visible");
-                setPage("test-one");
+                setPage("12");
               }}
             >
               <sphereGeometry args={[4, 8, 8]} />
@@ -111,7 +110,7 @@ function World() {
               onPointerOut={() => hoverTwo(false)}
               onClick={() => {
                 isVisible("visible");
-                setPage("test-two");
+                setPage("8");
               }}
             >
               <sphereGeometry args={[4, 8, 8]} />
@@ -124,7 +123,7 @@ function World() {
               onPointerOut={() => hoverThree(false)}
               onClick={() => {
                 isVisible("visible");
-                setPage("test-three");
+                setPage("12");
               }}
             >
               <sphereGeometry args={[4, 8, 8]} />
@@ -137,7 +136,7 @@ function World() {
               onPointerOut={() => hoverFour(false)}
               onClick={() => {
                 isVisible("visible");
-                setPage("test-four");
+                setPage("8");
               }}
             >
               <sphereGeometry args={[4, 8, 8]} />

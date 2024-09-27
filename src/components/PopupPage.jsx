@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { div } from "three/webgpu";
 
 function PopupPage({ active, close, page }) {
-  const restPath = "http://localhost/portfolio/wp-json/wp/v2/pages/8";
+  const restPath = "http://localhost/portfolio/wp-json/wp/v2/pages/" + page;
   const [restData, setData] = useState([]);
   const [isLoaded, setLoadStatus] = useState(false);
 
