@@ -117,8 +117,8 @@ function World() {
               onPointerOut={() => hoverTwo(false)}
               onClick={() => {
                 isVisible("visible");
-                setPage("8");
-                navigate("/works");
+                setPage("17");
+                navigate("/testing");
               }}
             >
               <sphereGeometry args={[4, 8, 8]} />

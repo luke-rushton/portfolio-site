@@ -1,0 +1,17 @@
+.testing {
+  height: 80vh;
+  overflow-y: scroll;
+  width: 60%;
+  margin: 0 auto;
+}
+::-webkit-scrollbar {
+  width: 0.5rem;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: rgba(147, 147, 147, 0.495);
+  border-radius: 0.25rem;
+}
+::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(63, 63, 63, 0.495);
+}
