@@ -13,8 +13,13 @@ $font-primary: black;
 $background-dark: $dark-two;
 
 //move this elsewhere
-h1 {
-  font-family: "Inter", sans-serif;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: GeistMono, "Inter", sans-serif;
   text-align: center;
   padding-top: 5rem;
   font-size: 2rem;

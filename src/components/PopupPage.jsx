@@ -35,9 +35,8 @@ function PopupPage({ active, close, page }) {
         <button className="close-button" onClick={close}>
           <img src="/x-mark.svg" />
         </button>
-        {isLoaded ? <h1>{restData.title.rendered}</h1> : <h1>Loading</h1>}
-        {/* ROUTER GOES HERE */}
 
+        {/* ROUTER GOES HERE */}
         <Routes>
           <Route path="/" exact element={<Home />} />
           <Route path="/about" element={<About />} />
