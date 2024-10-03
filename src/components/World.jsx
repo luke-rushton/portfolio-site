@@ -118,7 +118,7 @@ function World() {
               onClick={() => {
                 isVisible("visible");
                 setPage("17");
-                navigate("/testing");
+                navigate("/work");
               }}
             >
               <sphereGeometry args={[4, 8, 8]} />
