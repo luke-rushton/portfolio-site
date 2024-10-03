@@ -2,7 +2,7 @@ import React from "react";
 import { useState, useEffect } from "react";
 import { div } from "three/webgpu";
 
-function Testing() {
+function Work() {
   const restPath = "http://localhost/portfolio/wp-json/wp/v2/portfolio_work/27";
   const [restData, setData] = useState([]);
   const [isLoaded, setLoadStatus] = useState(false);
@@ -36,4 +36,4 @@ function Testing() {
   );
 }
 
-export default Testing;
+export default Work;

@@ -3,12 +3,12 @@ import { NavLink } from "react-router-dom";
 
 //individual work pages
 //temp
-import Testing from "../pages/Testing";
+import Testing from "../pages/Work";
 
 function WorkThumbnail({ id }) {
   return (
     <section>
-      <NavLink to={`/testing/${id}`}>{id}</NavLink>
+      <NavLink to={`/work/${id}`}>{id}</NavLink>
     </section>
   );
 }
