@@ -41,7 +41,7 @@ function PopupPage({ active, close, page }) {
           <Route path="/" exact element={<Home />} />
           <Route path="/about" element={<About />} />
           <Route path="/works" element={<Works />} />
-          <Route path="/testing" element={<Testing />} />
+          <Route path="/testing/:id" element={<Testing />} />
         </Routes>
       </article>
     </div>
