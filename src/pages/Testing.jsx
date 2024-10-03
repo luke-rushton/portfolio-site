@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import { div } from "three/webgpu";
 
 function Testing() {
-  const restPath = "http://localhost/portfolio/wp-json/wp/v2/pages/17";
+  const restPath = "http://localhost/portfolio/wp-json/wp/v2/portfolio_work/27";
   const [restData, setData] = useState([]);
   const [isLoaded, setLoadStatus] = useState(false);
 
@@ -31,6 +31,7 @@ function Testing() {
       ) : (
         <h2>Loading</h2>
       )}
+      <h3>test</h3>
     </div>
   );
 }
