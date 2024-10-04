@@ -5,7 +5,7 @@ import WorkThumbnail from "../components/WorkThumbnail";
 
 function Works() {
   const restPath =
-    "http://localhost/portfolio/wp-json/wp/v2/portfolio_work/?_fields=id,title";
+    "http://localhost/portfolio/wp-json/wp/v2/portfolio_work?_embed";
   const [restData, setData] = useState([]);
   const [isLoaded, setLoadStatus] = useState(false);
 
@@ -25,7 +25,12 @@ function Works() {
   return (
     <div>
       {restData.map((work) => (
-        <WorkThumbnail key={work.id} id={work.id} />
+        <WorkThumbnail
+          key={work.id}
+          id={work.id}
+          title={work.title.rendered}
+          image={work._embedded["wp:featuredmedia"][0].link}
+        />
       ))}
     </div>
   );

@@ -5,10 +5,11 @@ import { NavLink } from "react-router-dom";
 //temp
 import Testing from "../pages/Work";
 
-function WorkThumbnail({ id }) {
+function WorkThumbnail({ id, title, image }) {
   return (
     <section>
-      <NavLink to={`/work/${id}`}>{id}</NavLink>
+      <NavLink to={`/work/${id}`}>{title}</NavLink>
+      <p>{image}</p>
     </section>
   );
 }
