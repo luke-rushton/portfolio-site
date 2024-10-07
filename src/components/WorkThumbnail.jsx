@@ -9,7 +9,7 @@ function WorkThumbnail({ id, title, image }) {
   return (
     <section>
       <NavLink to={`/work/${id}`}>{title}</NavLink>
-      <p>{image}</p>
+      <img src={image} />
     </section>
   );
 }
