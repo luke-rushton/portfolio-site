@@ -29,7 +29,10 @@ function Works() {
           key={work.id}
           id={work.id}
           title={work.title.rendered}
-          image={work._embedded["wp:featuredmedia"][0].link}
+          image={
+            work._embedded["wp:featuredmedia"][0].media_details.sizes.medium
+              .source_url
+          }
         />
       ))}
     </div>
