@@ -2,13 +2,12 @@ import React from "react";
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 
-function Work() {
+function Contact() {
   //grab page id from url
   let { id } = useParams();
 
   //date for api call
-  const restPath =
-    "http://localhost/portfolio/wp-json/wp/v2/portfolio_work/" + id;
+  const restPath = "http://localhost/portfolio/wp-json/wp/v2/pages/42";
   const [restData, setData] = useState([]);
   const [isLoaded, setLoadStatus] = useState(false);
 
@@ -45,4 +44,4 @@ function Work() {
   );
 }
 
-export default Work;
+export default Contact;

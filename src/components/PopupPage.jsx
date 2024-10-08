@@ -9,6 +9,8 @@ import Home from "../pages/Home";
 import About from "../pages/About";
 import Works from "../pages/Works";
 import Work from "../pages/Work";
+import Experience from "../pages/Experience";
+import Contact from "../pages/Contact";
 
 function PopupPage({ active, close, page }) {
   const restPath = "http://localhost/portfolio/wp-json/wp/v2/pages/" + page;
@@ -41,6 +43,8 @@ function PopupPage({ active, close, page }) {
           <Route path="/" exact element={<Home />} />
           <Route path="/about" element={<About />} />
           <Route path="/works" element={<Works />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/experience" element={<Experience />} />
           <Route path="/work/:id" element={<Work />} />
         </Routes>
       </article>

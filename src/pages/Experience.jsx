@@ -1,14 +1,9 @@
 import React from "react";
 import { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
 
-function Work() {
-  //grab page id from url
-  let { id } = useParams();
-
+function Experience() {
   //date for api call
-  const restPath =
-    "http://localhost/portfolio/wp-json/wp/v2/portfolio_work/" + id;
+  const restPath = "http://localhost/portfolio/wp-json/wp/v2/pages/38";
   const [restData, setData] = useState([]);
   const [isLoaded, setLoadStatus] = useState(false);
 
@@ -25,13 +20,10 @@ function Work() {
     };
     fetchData();
   }, [restPath]);
-
   return (
-    <div className="testing">
-      {/* hero image */}
+    <div>
       {/* title */}
       {isLoaded ? <h1>{restData.title.rendered}</h1> : <h1>Loading</h1>}
-      {/*external links */}
 
       {/*content */}
       {isLoaded ? (
@@ -45,4 +37,4 @@ function Work() {
   );
 }
 
-export default Work;
+export default Experience;
