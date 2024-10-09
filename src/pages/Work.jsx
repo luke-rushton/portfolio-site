@@ -36,6 +36,7 @@ function Work() {
       {/*content */}
       {isLoaded ? (
         <div
+          className="wp-content"
           dangerouslySetInnerHTML={{ __html: restData.content.rendered }}
         ></div>
       ) : (
