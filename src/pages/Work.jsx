@@ -29,7 +29,7 @@ function Work() {
   }, [restPath]);
 
   return (
-    <div className="testing">
+    <div className="page-content">
       <NavLink className="nav-button back-button" to={`/works/`}>
         <img src="/arrow-left.svg" />
       </NavLink>

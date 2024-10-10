@@ -21,7 +21,7 @@ function Home() {
     fetchData();
   }, [restPath]);
   return (
-    <div>
+    <div className="page-content">
       {/* title */}
       {isLoaded ? <h1>{restData.title.rendered}</h1> : <h1>Loading</h1>}
 

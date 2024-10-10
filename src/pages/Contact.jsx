@@ -26,7 +26,7 @@ function Contact() {
   }, [restPath]);
 
   return (
-    <div className="testing">
+    <div className="page-content">
       {/* hero image */}
       {/* title */}
       {isLoaded ? <h1>{restData.title.rendered}</h1> : <h1>Loading</h1>}

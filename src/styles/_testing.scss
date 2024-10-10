@@ -8,8 +8,8 @@
     format("woff");
 }
 
-.testing {
-  height: 89.5vh;
+.page-content {
+  height: calc(100% - 2rem);
   overflow-y: scroll;
   overflow-x: hidden;
   //padding: 0 auto;

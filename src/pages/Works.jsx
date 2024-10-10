@@ -23,7 +23,7 @@ function Works() {
     fetchData();
   }, [restPath]);
   return (
-    <div>
+    <div className="page-content">
       {restData.map((work) => (
         <WorkThumbnail
           key={work.id}
