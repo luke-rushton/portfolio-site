@@ -30,9 +30,8 @@
   backdrop-filter: brightness(90%) blur(20px);
 
   //could make button its own component?
-  .close-button {
+  .nav-button {
     position: absolute;
-    right: 0.75rem;
     top: 0.75rem;
     padding: 0;
     height: 2rem;
@@ -44,5 +43,11 @@
       height: auto;
       max-width: 100%;
     }
+  }
+  .close-button {
+    right: 0.75rem;
+  }
+  .back-button {
+    left: 0.75rem;
   }
 }

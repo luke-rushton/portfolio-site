@@ -2,6 +2,7 @@ import React from "react";
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import ExternalLink from "../components/ExternalLink";
+import { NavLink } from "react-router-dom";
 
 function Work() {
   //grab page id from url
@@ -29,6 +30,10 @@ function Work() {
 
   return (
     <div className="testing">
+      <NavLink className="nav-button back-button" to={`/works/`}>
+        <img src="/arrow-left.svg" />
+      </NavLink>
+
       {/* hero image */}
       {isLoaded ? (
         <img

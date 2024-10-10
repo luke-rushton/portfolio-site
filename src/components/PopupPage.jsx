@@ -34,7 +34,7 @@ function PopupPage({ active, close, page }) {
   return (
     <div className={`popup-mask ${active}`}>
       <article className={`popup`}>
-        <button className="close-button" onClick={close}>
+        <button className="nav-button close-button" onClick={close}>
           <img src="/x-mark.svg" />
         </button>
 

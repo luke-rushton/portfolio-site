@@ -12,11 +12,18 @@
   height: 89.5vh;
   overflow-y: scroll;
   overflow-x: hidden;
-  padding: 1rem;
+  //padding: 0 auto;
   padding-top: 2rem;
-  max-width: 55rem;
-  margin: 0 auto;
+  display: grid;
+  grid-template-columns: minmax(1rem, 1fr) minmax(10rem, 55rem) minmax(
+      1rem,
+      1fr
+    );
+  //max-width: 55rem;
 
+  * {
+    grid-column: 2;
+  }
   img {
     height: auto;
     aspect-ratio: unset;
