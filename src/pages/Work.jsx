@@ -1,6 +1,7 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
+import ExternalLink from "../components/ExternalLink";
 
 function Work() {
   //grab page id from url
@@ -8,7 +9,7 @@ function Work() {
 
   //date for api call
   const restPath =
-    "http://localhost/portfolio/wp-json/wp/v2/portfolio_work/" + id;
+    "http://localhost/portfolio/wp-json/wp/v2/portfolio_work/" + id + "?_embed";
   const [restData, setData] = useState([]);
   const [isLoaded, setLoadStatus] = useState(false);
 
@@ -29,10 +30,37 @@ function Work() {
   return (
     <div className="testing">
       {/* hero image */}
+      {isLoaded ? (
+        <img
+          src={
+            restData._embedded["wp:featuredmedia"][0].media_details.sizes.full
+              .source_url
+          }
+        />
+      ) : (
+        <h2>Loading</h2>
+      )}
       {/* title */}
       {isLoaded ? <h1>{restData.title.rendered}</h1> : <h1>Loading</h1>}
       {/*external links */}
-
+      {isLoaded ? (
+        <ExternalLink
+          url={restData.acf.github_link.url}
+          title={restData.acf.github_link.title}
+          img="/github.svg"
+        />
+      ) : (
+        <p>Loading...</p>
+      )}
+      {isLoaded ? (
+        <ExternalLink
+          url={restData.acf.live_site_link.url}
+          title={restData.acf.live_site_link.title}
+          img="/arrow-right-circle.svg"
+        />
+      ) : (
+        <p>Loading...</p>
+      )}
       {/*content */}
       {isLoaded ? (
         <div
