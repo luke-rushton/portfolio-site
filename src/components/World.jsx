@@ -63,7 +63,7 @@ function World() {
           { name: "right", keys: ["ArrowRight", "d", "D"] },
         ]}
       >
-        <Canvas>
+        <Canvas camera={{ position: [-20, 4, 0] }}>
           <OrbitControls
             enablePan={false}
             maxDistance={20}
