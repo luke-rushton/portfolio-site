@@ -29,7 +29,7 @@ function Work() {
   }, [restPath]);
 
   return (
-    <div className="page-content">
+    <div className="work-page page-content">
       <NavLink className="nav-button back-button" to={`/works/`}>
         <img src="/arrow-left.svg" />
       </NavLink>
@@ -45,31 +45,35 @@ function Work() {
       ) : (
         <h2>Loading</h2>
       )}
-      {/* title */}
-      {isLoaded ? <h1>{restData.title.rendered}</h1> : <h1>Loading</h1>}
-      {/*external links */}
-      {isLoaded ? (
-        <ExternalLink
-          url={restData.acf.github_link.url}
-          title={restData.acf.github_link.title}
-          img="/github.svg"
-        />
-      ) : (
-        <p>Loading...</p>
-      )}
-      {isLoaded ? (
-        <ExternalLink
-          url={restData.acf.live_site_link.url}
-          title={restData.acf.live_site_link.title}
-          img="/arrow-right-circle.svg"
-        />
-      ) : (
-        <p>Loading...</p>
-      )}
+      <section className="info-section">
+        {/* title */}
+        {isLoaded ? <h1>{restData.title.rendered}</h1> : <h1>Loading</h1>}
+        {/*external links */}
+        <div className="external-links">
+          {isLoaded ? (
+            <ExternalLink
+              url={restData.acf.live_site_link.url}
+              title={restData.acf.live_site_link.title}
+              img="/arrow-right-circle.svg"
+            />
+          ) : (
+            <p>Loading...</p>
+          )}
+          {isLoaded ? (
+            <ExternalLink
+              url={restData.acf.github_link.url}
+              title={restData.acf.github_link.title}
+              img="/github.svg"
+            />
+          ) : (
+            <p>Loading...</p>
+          )}
+        </div>
+      </section>
       {/*content */}
       {isLoaded ? (
         <div
-          className="wp-content"
+          className="work-wp-content"
           dangerouslySetInnerHTML={{ __html: restData.content.rendered }}
         ></div>
       ) : (
