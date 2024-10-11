@@ -23,18 +23,22 @@ function Works() {
     fetchData();
   }, [restPath]);
   return (
-    <div className="page-content">
-      {restData.map((work) => (
-        <WorkThumbnail
-          key={work.id}
-          id={work.id}
-          title={work.title.rendered}
-          image={
-            work._embedded["wp:featuredmedia"][0].media_details.sizes.medium
-              .source_url
-          }
-        />
-      ))}
+    <div className="works-page page-content">
+      {/* should this be dynamic */}
+      <h1>Works</h1>
+      <section className="works-list">
+        {restData.map((work) => (
+          <WorkThumbnail
+            key={work.id}
+            id={work.id}
+            title={work.title.rendered}
+            image={
+              work._embedded["wp:featuredmedia"][0].media_details.sizes.medium
+                .source_url
+            }
+          />
+        ))}
+      </section>
     </div>
   );
 }

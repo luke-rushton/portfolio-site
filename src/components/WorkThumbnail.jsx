@@ -7,9 +7,9 @@ import Testing from "../pages/Work";
 
 function WorkThumbnail({ id, title, image }) {
   return (
-    <section>
-      <NavLink to={`/work/${id}`}>{title}</NavLink>
+    <section className="work-thumbnail">
       <img src={image} />
+      <NavLink to={`/work/${id}`}>{title}</NavLink>
     </section>
   );
 }

@@ -12,22 +12,17 @@ $warning: rgba(233, 233, 57, 0.817);
 $font-primary: black;
 $background-dark: $dark-two;
 
-//move this elsewhere
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-family: GeistMono, "Inter", sans-serif;
-  text-align: center;
-  padding-top: 5rem;
-  font-size: 2rem;
-  font-weight: 400;
-  color: $font-primary;
-}
-
 //structure
 $radius-small: 0.5rem;
 $radius-medium: 1rem;
 $radius-large: 2rem;
+
+//fonts
+$heading-one: 3rem;
+$heading-two: 2rem;
+$heading-three: 2rem;
+$heading-four: 2rem;
+$heading-five: 2rem;
+$heading-six: 2rem;
+$paragraph: 1rem;
+$comment: 0.75rem;
