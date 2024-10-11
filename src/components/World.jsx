@@ -22,6 +22,7 @@ import testIsland from "../data/testIsland";
 import testProps from "../data/testProps";
 import tempIsland from "../data/tempIsland";
 import emptyProps from "../data/emptyProps";
+import bigIsland from "../data/bigIsland";
 
 //test objects
 import Prop from "./Prop";
@@ -69,7 +70,6 @@ function World() {
             maxDistance={20}
             minDistance={10}
             maxPolarAngle={Math.PI / 2}
-            minPolarAngle={Math.PI / 2.5}
           />
           <ambientLight intensity={Math.PI / 2} />
           {/* ocean */}
@@ -87,7 +87,7 @@ function World() {
             </EffectComposer>
             {/* hitbox spheres for outline ffect */}
             <mesh
-              position={[3, -0.5, 1.5]}
+              position={[0, 3, 0]}
               onPointerEnter={() => hover(true)}
               onPointerOut={() => hover(false)}
               onClick={() => {
@@ -96,7 +96,7 @@ function World() {
                 navigate("/");
               }}
             >
-              <sphereGeometry args={[4, 8, 8]} />
+              <sphereGeometry args={[12, 32, 32]} />
               <meshStandardMaterial opacity={0.4} transparent />
             </mesh>
 
@@ -159,9 +159,9 @@ function World() {
             {/* the world */}
             <Select enabled={hovered}>
               <Island
-                position={[0, 0, 0]}
-                tileset={testIsland}
-                propset={testProps}
+                position={[0, 4, 0]}
+                tileset={bigIsland}
+                propset={emptyProps}
               />
             </Select>
             <Select enabled={hoveredTwo}>
@@ -181,8 +181,8 @@ function World() {
             <Select enabled={hoveredThree}>
               <Island
                 position={[13, 0, -5]}
-                tileset={tempIsland}
-                propset={emptyProps}
+                tileset={testIsland}
+                propset={testProps}
               />
             </Select>
             <Select enabled={hoveredOne}>
