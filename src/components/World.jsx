@@ -63,10 +63,13 @@ function World() {
           { name: "right", keys: ["ArrowRight", "d", "D"] },
         ]}
       >
-        <Canvas camera={{ position: [2, 2, 2], rotation: [0, 0, 0] }}>
-          <Player
-            position={position}
-            setPosition={(input) => setPosition(input)}
+        <Canvas>
+          <OrbitControls
+            enablePan={false}
+            maxDistance={20}
+            minDistance={10}
+            maxPolarAngle={Math.PI / 2}
+            minPolarAngle={Math.PI / 2.5}
           />
           <ambientLight intensity={Math.PI / 2} />
           {/* ocean */}
