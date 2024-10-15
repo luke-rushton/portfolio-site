@@ -20,7 +20,9 @@ function Island({ position, tileset, propset }) {
             model={tile.model}
             position={object_group(tile.position)}
             rotation={tile.rotation}
-            key={"tile" + object_group(tile.position)}
+            key={
+              "tile" + object_group(tile.position) + tile.rotation + tile.model
+            }
           />
         );
       })}
