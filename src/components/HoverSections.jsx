@@ -20,11 +20,12 @@ import Island from "./Island";
 
 function HoverSections({ setPage, isVisible }) {
   //hover effect state
-  const [hovered, hover] = useState(null);
   const [hoveredOne, hoverOne] = useState(null);
   const [hoveredTwo, hoverTwo] = useState(null);
   const [hoveredThree, hoverThree] = useState(null);
   const [hoveredFour, hoverFour] = useState(null);
+  const [hoveredFive, hoverFive] = useState(null);
+  const [hoveredSix, hoverSix] = useState(null);
 
   //navigation
   const navigate = useNavigate();
@@ -42,23 +43,13 @@ function HoverSections({ setPage, isVisible }) {
         />
       </EffectComposer>
       {/* hitbox spheres for outline ffect */}
-      <mesh
-        position={[0, 3, 0]}
-        onPointerEnter={() => hover(true)}
-        onPointerOut={() => hover(false)}
-        onClick={() => {
-          isVisible("visible");
-          setPage("8");
-          navigate("/");
-        }}
-      >
-        <sphereGeometry args={[12, 32, 32]} />
-        <meshStandardMaterial opacity={0.4} transparent />
-      </mesh>
 
       <mesh
-        position={[-4, -0.5, -10]}
-        onPointerEnter={() => hoverOne(true)}
+        position={[-0, 0, -4 * Math.sqrt(3)]}
+        onPointerEnter={(e) => {
+          e.stopPropagation();
+          hoverOne(true);
+        }}
         onPointerOut={() => hoverOne(false)}
         onClick={() => {
           isVisible("visible");
@@ -71,8 +62,11 @@ function HoverSections({ setPage, isVisible }) {
       </mesh>
 
       <mesh
-        position={[10, -0.5, 7]}
-        onPointerEnter={() => hoverTwo(true)}
+        position={[6, 0, 2 * Math.sqrt(3)]}
+        onPointerEnter={(e) => {
+          e.stopPropagation();
+          hoverTwo(true);
+        }}
         onPointerOut={() => hoverTwo(false)}
         onClick={() => {
           isVisible("visible");
@@ -85,9 +79,13 @@ function HoverSections({ setPage, isVisible }) {
       </mesh>
 
       <mesh
-        position={[15, -0.5, -4]}
-        onPointerEnter={() => hoverThree(true)}
+        position={[6, 0, -2 * Math.sqrt(3)]}
+        onPointerEnter={(e) => {
+          e.stopPropagation();
+          hoverThree(true);
+        }}
         onPointerOut={() => hoverThree(false)}
+        stopPropagation
         onClick={() => {
           isVisible("visible");
           setPage("12");
@@ -99,8 +97,11 @@ function HoverSections({ setPage, isVisible }) {
       </mesh>
 
       <mesh
-        position={[-9, -0.5, 9]}
-        onPointerEnter={() => hoverFour(true)}
+        position={[-6, 0, 2 * Math.sqrt(3)]}
+        onPointerEnter={(e) => {
+          e.stopPropagation();
+          hoverFour(true);
+        }}
         onPointerOut={() => hoverFour(false)}
         onClick={() => {
           isVisible("visible");
@@ -112,34 +113,81 @@ function HoverSections({ setPage, isVisible }) {
         <meshStandardMaterial opacity={0.4} transparent />
       </mesh>
 
+      <mesh
+        position={[-6, 0, -2 * Math.sqrt(3)]}
+        onPointerEnter={(e) => {
+          e.stopPropagation();
+          hoverFive(true);
+        }}
+        onPointerOut={() => hoverFive(false)}
+        onClick={() => {
+          isVisible("visible");
+          setPage("8");
+          navigate("/experience");
+        }}
+      >
+        <sphereGeometry args={[4, 8, 8]} />
+        <meshStandardMaterial opacity={0.4} transparent />
+      </mesh>
+
+      <mesh
+        position={[0, 0, 4 * Math.sqrt(3)]}
+        onPointerEnter={(e) => {
+          e.stopPropagation();
+          hoverSix(true);
+        }}
+        onPointerOut={() => hoverSix(false)}
+        onClick={() => {
+          isVisible("visible");
+          setPage("8");
+          navigate("/experience");
+        }}
+      >
+        <sphereGeometry args={[4, 8, 8]} />
+        <meshStandardMaterial opacity={0.4} transparent />
+      </mesh>
+
       {/* the world */}
-      <Select enabled={hovered}>
-        <Island position={[0, 4, 0]} tileset={bigIsland} propset={emptyProps} />
-      </Select>
-      <Select enabled={hoveredTwo}>
+      <Island position={[0, 0, 0]} tileset={bigIsland} propset={emptyProps} />
+
+      <Select enabled={hoveredOne}>
         <Island
-          position={[8, 0, 6]}
+          position={[0, 0, -4 * Math.sqrt(3)]}
           tileset={tempIsland}
           propset={emptyProps}
         />
       </Select>
-      <Select enabled={hoveredFour}>
+      <Select enabled={hoveredTwo}>
         <Island
-          position={[-11, 0, 7]}
+          position={[6, 0, 2 * Math.sqrt(3)]}
           tileset={tempIsland}
           propset={emptyProps}
         />
       </Select>
       <Select enabled={hoveredThree}>
         <Island
-          position={[13, 0, -5]}
-          tileset={testIsland}
-          propset={testProps}
+          position={[6, 0, -2 * Math.sqrt(3)]}
+          tileset={tempIsland}
+          propset={emptyProps}
         />
       </Select>
-      <Select enabled={hoveredOne}>
+      <Select enabled={hoveredFour}>
         <Island
-          position={[-6, 0, -12]}
+          position={[-6, 0, 2 * Math.sqrt(3)]}
+          tileset={tempIsland}
+          propset={emptyProps}
+        />
+      </Select>
+      <Select enabled={hoveredFive}>
+        <Island
+          position={[-6, 0, -2 * Math.sqrt(3)]}
+          tileset={tempIsland}
+          propset={emptyProps}
+        />
+      </Select>
+      <Select enabled={hoveredSix}>
+        <Island
+          position={[0, 0, 4 * Math.sqrt(3)]}
           tileset={tempIsland}
           propset={emptyProps}
         />
