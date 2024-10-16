@@ -1,4 +1,4 @@
-import React, { Suspense, useState } from "react";
+import React, { Suspense, useState, useRef, useEffect } from "react";
 import { Canvas } from "@react-three/fiber";
 import { OrbitControls } from "@react-three/drei";
 import Ocean from "./Ocean";
@@ -12,6 +12,9 @@ import PopupPage from "./PopupPage";
 //loading
 import Loading from "./Loading";
 import HoverSections from "./HoverSections";
+
+//player component
+import Boat from "./Boat";
 
 function World() {
   //Popup Visibility
@@ -29,13 +32,9 @@ function World() {
       <Suspense fallback={<Loading />}>
         <Header />
         <Canvas camera={{ position: [-20, 4, 0] }}>
-          <OrbitControls
-            enablePan={false}
-            maxDistance={20}
-            minDistance={10}
-            maxPolarAngle={Math.PI / 2}
-          />
           <ambientLight intensity={Math.PI / 2} />
+          {/* boat */}
+          <Boat />
           {/* ocean */}
           <Ocean />
           <HoverSections setPage={setPage} isVisible={isVisible} />
