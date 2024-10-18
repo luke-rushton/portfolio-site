@@ -15,10 +15,13 @@ import HoverSections from "./HoverSections";
 
 //player component
 import Boat from "./Boat";
+import { useNavigate } from "react-router-dom";
 
 function World() {
   //Popup Visibility
   const [visibility, isVisible] = useState("invisible");
+  //navigation
+  const navigate = useNavigate();
 
   //track what page we want to load based on clicked island
   const [page, setPage] = useState("8");
@@ -26,11 +29,14 @@ function World() {
     <div className="world">
       <PopupPage
         active={visibility}
-        close={() => isVisible("invisible")}
+        close={() => {
+          isVisible("invisible");
+          navigate("/");
+        }}
         page={page}
       />
       <Suspense fallback={<Loading />}>
-        <Header />
+        <Header open={() => isVisible("visible")} />
         <Canvas camera={{ position: [-20, 4, 0] }}>
           <ambientLight intensity={Math.PI / 2} />
           {/* boat */}

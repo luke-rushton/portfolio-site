@@ -10,6 +10,8 @@
     format("woff");
 }
 
+//general
+
 h1,
 h2,
 h3,
@@ -41,4 +43,17 @@ a {
   font-family: GeistMono, "Inter", sans-serif;
   font-size: $comment;
   color: $danger;
+}
+
+//header
+header {
+  ul {
+    a {
+      //move this to typography?
+      color: $font-light;
+      font-family: GeistMono, "Inter", sans-serif;
+      font-size: $heading-three;
+      font-weight: $thin;
+    }
+  }
 }

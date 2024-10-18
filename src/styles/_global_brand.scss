@@ -1,5 +1,6 @@
 //raw colors
 $background: #ddf6f9d4;
+$backgroundOpaque: #ddf6f9;
 $dark-one: #2c4941;
 $dark-two: #4a6969;
 $light-one: #acdac5;
@@ -10,6 +11,7 @@ $warning: rgba(233, 233, 57, 0.817);
 
 //text
 $font-primary: black;
+$font-light: $backgroundOpaque;
 $background-dark: $dark-two;
 
 //structure
@@ -20,9 +22,14 @@ $radius-large: 2rem;
 //fonts
 $heading-one: 3rem;
 $heading-two: 2rem;
-$heading-three: 2rem;
+$heading-three: 1.5rem;
 $heading-four: 2rem;
 $heading-five: 2rem;
 $heading-six: 2rem;
 $paragraph: 1rem;
 $comment: 0.75rem;
+
+//font weights
+$heavy: 600;
+$medium: 400;
+$thin: 200;
