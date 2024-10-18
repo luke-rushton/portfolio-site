@@ -36,7 +36,7 @@ function HoverSections({ setPage, isVisible }) {
 
   return (
     <Selection>
-      {/*outline effect THIS IS NOT PERFORMANT*/}
+      {/*outline effect */}
       <EffectComposer multisampling={0} autoClear={false}>
         <Outline
           blur
@@ -44,6 +44,7 @@ function HoverSections({ setPage, isVisible }) {
           hiddenEdgeColor="white"
           edgeStrength={10}
           width={1000}
+          pulseSpeed={0.5}
         />
       </EffectComposer>
       {/* hitbox spheres for outline ffect */}

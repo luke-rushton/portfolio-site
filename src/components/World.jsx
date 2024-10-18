@@ -1,6 +1,6 @@
 import React, { Suspense, useState, useRef, useEffect } from "react";
 import { Canvas } from "@react-three/fiber";
-import { OrbitControls } from "@react-three/drei";
+import { Sky } from "@react-three/drei";
 import Ocean from "./Ocean";
 
 //ui components
@@ -43,6 +43,7 @@ function World() {
           <Boat />
           {/* ocean */}
           <Ocean />
+          {/* <Sky scale={1000} sunPosition={[500, 600, -1000]} turbidity={0.01} /> */}
           <HoverSections setPage={setPage} isVisible={isVisible} />
         </Canvas>
       </Suspense>
