@@ -17,6 +17,9 @@ import tempIsland from "../data/tempIsland";
 import emptyProps from "../data/emptyProps";
 import bigIsland from "../data/bigIsland";
 
+//hover text
+import HoverHtml from "./HoverHtml";
+
 import Island from "./Island";
 
 function HoverSections({ setPage, isVisible }) {
@@ -157,9 +160,11 @@ function HoverSections({ setPage, isVisible }) {
           tileset={tempIsland}
           propset={emptyProps}
         />
-        <Html zIndexRange={[10, 0]} position={[0, 2, -4 * Math.sqrt(3)]}>
-          <h2>Contact</h2>
-        </Html>
+        <HoverHtml
+          position={[0, 2, -4 * Math.sqrt(3)]}
+          visible={hoveredOne}
+          title="Contact"
+        />
       </Select>
       <Select enabled={hoveredTwo}>
         <Island
@@ -167,9 +172,11 @@ function HoverSections({ setPage, isVisible }) {
           tileset={tempIsland}
           propset={emptyProps}
         />
-        <Html zIndexRange={[10, 0]} position={[6, 2, 2 * Math.sqrt(3)]}>
-          <h2>Works</h2>
-        </Html>
+        <HoverHtml
+          position={[6, 2, 2 * Math.sqrt(3)]}
+          visible={hoveredTwo}
+          title="Works"
+        />
       </Select>
       <Select enabled={hoveredThree}>
         <Island
@@ -177,9 +184,11 @@ function HoverSections({ setPage, isVisible }) {
           tileset={tempIsland}
           propset={emptyProps}
         />
-        <Html zIndexRange={[10, 0]} position={[6, 2, -2 * Math.sqrt(3)]}>
-          <h2>About</h2>
-        </Html>
+        <HoverHtml
+          position={[6, 2, -2 * Math.sqrt(3)]}
+          visible={hoveredThree}
+          title="About"
+        />
       </Select>
       <Select enabled={hoveredFour}>
         <Island
@@ -187,9 +196,11 @@ function HoverSections({ setPage, isVisible }) {
           tileset={tempIsland}
           propset={emptyProps}
         />
-        <Html zIndexRange={[10, 0]} position={[-6, 2, 2 * Math.sqrt(3)]}>
-          <h2>Experience</h2>
-        </Html>
+        <HoverHtml
+          position={[-6, 2, 2 * Math.sqrt(3)]}
+          visible={hoveredFour}
+          title="Experience"
+        />
       </Select>
       <Select enabled={hoveredFive}>
         <Island
@@ -197,9 +208,11 @@ function HoverSections({ setPage, isVisible }) {
           tileset={tempIsland}
           propset={emptyProps}
         />
-        <Html zIndexRange={[10, 0]} position={[-6, 2, -2 * Math.sqrt(3)]}>
-          <h2>Home</h2>
-        </Html>
+        <HoverHtml
+          position={[-6, 2, -2 * Math.sqrt(3)]}
+          visible={hoveredFive}
+          title="home"
+        />
       </Select>
       <Select enabled={hoveredSix}>
         <Island
@@ -208,9 +221,11 @@ function HoverSections({ setPage, isVisible }) {
           propset={emptyProps}
         />
       </Select>
-      <Html zIndexRange={[10, 0]} position={[0, 2, 4 * Math.sqrt(3)]}>
-        <h2>Experience</h2>
-      </Html>
+      <HoverHtml
+        position={[0, 2, 4 * Math.sqrt(3)]}
+        visible={hoveredSix}
+        title="Experience"
+      />
     </Selection>
   );
 }
