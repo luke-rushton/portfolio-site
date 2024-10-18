@@ -1,7 +1,23 @@
+@import "global_brand";
+
 header {
+  opacity: 50%;
+  backdrop-filter: blur(20px);
   position: fixed;
   left: 0px;
   right: 0px;
   top: 0px;
-  background-color: pink;
+  z-index: 2;
+
+  //animations
+  transition: 0.5s;
+
+  ul {
+    margin: 1rem 4rem;
+    display: flex;
+    justify-content: space-between;
+  }
+}
+header:hover {
+  opacity: 100%;
 }

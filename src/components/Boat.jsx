@@ -11,12 +11,8 @@ function Boat() {
   const { nodes, materials } = useGLTF("/ship_red_accent.gltf");
 
   useFrame(() => {
-    //console.log(ref.current.getAzimuthalAngle());
-    //console.log(boatRef.current.position);
     let x = Math.sin(ref.current.getAzimuthalAngle()) * 14;
-    console.log(x);
     let z = Math.cos(ref.current.getAzimuthalAngle()) * 14;
-    console.log(z);
     boatRef.current.position.x = x;
     boatRef.current.position.z = z;
     boatRef.current.rotation.y = Math.PI / 2 + ref.current.getAzimuthalAngle();
