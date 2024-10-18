@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Html, Text } from "@react-three/drei";
 import {
   EffectComposer,
   Outline,
@@ -122,8 +123,8 @@ function HoverSections({ setPage, isVisible }) {
         onPointerOut={() => hoverFive(false)}
         onClick={() => {
           isVisible("visible");
-          setPage("8");
-          navigate("/experience");
+          setPage("40");
+          navigate("/");
         }}
       >
         <sphereGeometry args={[4, 8, 8]} />
@@ -156,6 +157,9 @@ function HoverSections({ setPage, isVisible }) {
           tileset={tempIsland}
           propset={emptyProps}
         />
+        <Html zIndexRange={[10, 0]} position={[0, 2, -4 * Math.sqrt(3)]}>
+          <h2>Contact</h2>
+        </Html>
       </Select>
       <Select enabled={hoveredTwo}>
         <Island
@@ -163,6 +167,9 @@ function HoverSections({ setPage, isVisible }) {
           tileset={tempIsland}
           propset={emptyProps}
         />
+        <Html zIndexRange={[10, 0]} position={[6, 2, 2 * Math.sqrt(3)]}>
+          <h2>Works</h2>
+        </Html>
       </Select>
       <Select enabled={hoveredThree}>
         <Island
@@ -170,6 +177,9 @@ function HoverSections({ setPage, isVisible }) {
           tileset={tempIsland}
           propset={emptyProps}
         />
+        <Html zIndexRange={[10, 0]} position={[6, 2, -2 * Math.sqrt(3)]}>
+          <h2>About</h2>
+        </Html>
       </Select>
       <Select enabled={hoveredFour}>
         <Island
@@ -177,6 +187,9 @@ function HoverSections({ setPage, isVisible }) {
           tileset={tempIsland}
           propset={emptyProps}
         />
+        <Html zIndexRange={[10, 0]} position={[-6, 2, 2 * Math.sqrt(3)]}>
+          <h2>Experience</h2>
+        </Html>
       </Select>
       <Select enabled={hoveredFive}>
         <Island
@@ -184,6 +197,9 @@ function HoverSections({ setPage, isVisible }) {
           tileset={tempIsland}
           propset={emptyProps}
         />
+        <Html zIndexRange={[10, 0]} position={[-6, 2, -2 * Math.sqrt(3)]}>
+          <h2>Home</h2>
+        </Html>
       </Select>
       <Select enabled={hoveredSix}>
         <Island
@@ -192,6 +208,9 @@ function HoverSections({ setPage, isVisible }) {
           propset={emptyProps}
         />
       </Select>
+      <Html zIndexRange={[10, 0]} position={[0, 2, 4 * Math.sqrt(3)]}>
+        <h2>Experience</h2>
+      </Html>
     </Selection>
   );
 }

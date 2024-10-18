@@ -30,7 +30,7 @@ function Boat() {
         minDistance={17}
         maxPolarAngle={Math.PI / 2.05}
         minPolarAngle={Math.PI / 2.2}
-        rotateSpeed={0.25}
+        rotateSpeed={0.2}
       />
       <mesh
         ref={boatRef}
