@@ -35,18 +35,19 @@ function World() {
         }}
         page={page}
       />
-      <Suspense fallback={<Loading />}>
-        <Header open={() => isVisible("visible")} />
-        <Canvas camera={{ position: [-20, 4, 0] }}>
-          <ambientLight intensity={Math.PI / 2} />
-          {/* boat */}
-          <Boat />
-          {/* ocean */}
-          <Ocean />
-          {/* <Sky scale={1000} sunPosition={[500, 600, -1000]} turbidity={0.01} /> */}
-          <HoverSections setPage={setPage} isVisible={isVisible} />
-        </Canvas>
-      </Suspense>
+      <Loading />
+      {/*<Suspense fallback={<Loading />}>*/}
+      <Header open={() => isVisible("visible")} />
+      <Canvas camera={{ position: [-20, 4, 0] }}>
+        <ambientLight intensity={Math.PI / 2} />
+        {/* boat */}
+        <Boat />
+        {/* ocean */}
+        <Ocean />
+        {/* <Sky scale={1000} sunPosition={[500, 600, -1000]} turbidity={0.01} /> */}
+        <HoverSections setPage={setPage} isVisible={isVisible} />
+      </Canvas>
+      {/*</Suspense>*/}
     </div>
   );
 }

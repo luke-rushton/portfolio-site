@@ -1,6 +1,7 @@
 //raw colors
 $background: #ddf6f9d4;
 $backgroundOpaque: #ddf6f9;
+$charcoal: #0b1210;
 $dark-one: #2c4941;
 $dark-two: #4a6969;
 $light-one: #acdac5;
@@ -12,7 +13,7 @@ $warning: rgba(233, 233, 57, 0.817);
 //text
 $font-primary: black;
 $font-light: $backgroundOpaque;
-$background-dark: $dark-two;
+$background-dark: $charcoal;
 
 //structure
 $radius-small: 0.5rem;
