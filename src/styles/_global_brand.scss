@@ -30,7 +30,20 @@ $heading-six: 2rem;
 $paragraph: 1rem;
 $comment: 0.75rem;
 
+//mobile fonts
+$mobile-heading-one: 3rem;
+$mobile-heading-two: 2rem;
+$mobile-heading-three: 1rem;
+$mobile-heading-four: 2rem;
+$mobile-heading-five: 2rem;
+$mobile-heading-six: 2rem;
+$mobile-paragraph: 1rem;
+$mobile-comment: 0.75rem;
+
 //font weights
 $heavy: 600;
 $medium: 400;
 $thin: 200;
+
+//breakpoints
+$min-desktop: 48em;
