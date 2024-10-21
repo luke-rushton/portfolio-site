@@ -1,0 +1,25 @@
+@import "global_brand";
+.drag-info {
+  position: fixed;
+  top: 33%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 998;
+  width: 15rem;
+  height: 20rem;
+  transition: 0.25s;
+
+  img {
+    position: absolute;
+    width: 3rem;
+    height: auto;
+    top: 25%;
+  }
+  h2 {
+    position: absolute;
+
+    top: 42%;
+    width: fit-content;
+    transform: translateY(-50%, -50%);
+  }
+}
