@@ -52,8 +52,13 @@ header {
       //move this to typography?
       color: $font-primary;
       font-family: GeistMono, "Inter", sans-serif;
-      font-size: $heading-three;
+      font-size: $mobile-heading-three;
       font-weight: $thin;
+    }
+    @media (min-width: $min-desktop) {
+      a {
+        font-size: $heading-three;
+      }
     }
   }
 }

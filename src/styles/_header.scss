@@ -1,7 +1,6 @@
 @import "global_brand";
 
 header {
-  opacity: 50%;
   backdrop-filter: blur(20px);
   position: fixed;
   left: 0px;
@@ -13,9 +12,16 @@ header {
   transition: 0.5s;
 
   ul {
-    margin: 1rem 4rem;
+    margin: 1rem 1rem;
     display: flex;
     justify-content: space-between;
+  }
+  @media (min-width: $min-desktop) {
+    opacity: 50%;
+
+    ul {
+      margin: 1rem 4rem;
+    }
   }
 }
 header:hover {
