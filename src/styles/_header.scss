@@ -2,6 +2,7 @@
 
 header {
   backdrop-filter: blur(20px);
+  background-image: linear-gradient($header-shadow, rgba(255, 255, 255, 0));
   position: fixed;
   left: 0px;
   right: 0px;
@@ -17,7 +18,7 @@ header {
     justify-content: space-between;
   }
   @media (min-width: $min-desktop) {
-    opacity: 50%;
+    //opacity: 50%;
 
     ul {
       margin: 1rem 4rem;

@@ -44,7 +44,7 @@ function World() {
         <Boat />
         {/* ocean */}
         <Ocean />
-        {/* <Sky scale={1000} sunPosition={[500, 600, -1000]} turbidity={0.01} /> */}
+        {/* <Sky elevation={0} turbidity={0.01} /> */}
         <HoverSections setPage={setPage} isVisible={isVisible} />
       </Canvas>
       {/* </Suspense> */}

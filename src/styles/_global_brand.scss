@@ -8,9 +8,10 @@ $light-one: #acdac5;
 $highlight: #cd6933;
 $danger: rgba(233, 57, 57, 0.788);
 $warning: rgba(233, 233, 57, 0.817);
+$header-shadow: #15223650;
 //DO NOT DIRECTLY ASSIGN THESE TO ANYTHING, FIRST ASSIGN TO A BRAND VARIABLE. e.g. $font-primary
 
-//text
+//font color
 $font-primary: black;
 $font-light: $backgroundOpaque;
 $background-dark: $charcoal;
