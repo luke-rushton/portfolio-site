@@ -5,6 +5,7 @@ import Ocean from "./Ocean";
 
 //ui components
 import Header from "./Header";
+import DragInfo from "./DragInfo";
 
 //test objects
 import PopupPage from "./PopupPage";
@@ -36,6 +37,7 @@ function World() {
         page={page}
       />
       <Loading />
+      <DragInfo />
       {/* <Suspense fallback={<Loading />}> */}
       <Header open={() => isVisible("visible")} />
       <Canvas camera={{ position: [-20, 4, 0] }}>
