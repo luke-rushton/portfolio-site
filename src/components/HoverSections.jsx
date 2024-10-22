@@ -16,6 +16,7 @@ import testProps from "../data/testProps";
 import tempIsland from "../data/tempIsland";
 import emptyProps from "../data/emptyProps";
 import bigIsland from "../data/bigIsland";
+import bigIslandProps from "../data/bigIslandProps";
 
 //hover text
 import HoverHtml from "./HoverHtml";
@@ -149,7 +150,7 @@ function HoverSections({ setPage, isVisible }) {
         }}
       >
         <sphereGeometry args={[4, 8, 8]} />
-        <meshStandardMaterial opacity={0} transparent />
+        <meshStandardMaterial opacity={0.3} transparent />
       </mesh>
 
       {/* the world */}

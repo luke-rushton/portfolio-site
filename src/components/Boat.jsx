@@ -21,12 +21,12 @@ function Boat() {
     <>
       <OrbitControls
         ref={ref}
-        enablePan={false}
+        /*enablePan={false}
         maxDistance={20}
         minDistance={17}
         maxPolarAngle={Math.PI / 2.05}
         minPolarAngle={Math.PI / 2.2}
-        rotateSpeed={0.2}
+        rotateSpeed={0.2} */
       />
       <mesh
         ref={boatRef}

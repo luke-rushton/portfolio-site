@@ -17,6 +17,10 @@ function Ocean() {
   height.wrapS = THREE.RepeatWrapping;
   height.wrapT = THREE.RepeatWrapping;
   height.repeat.set(150, 150);
+  const displace = useLoader(THREE.TextureLoader, "/Water_002_DISP.png");
+  displace.wrapS = THREE.RepeatWrapping;
+  displace.wrapT = THREE.RepeatWrapping;
+  displace.repeat.set(150, 150);
   const color = useLoader(THREE.TextureLoader, "/Water_002_COLOR.jpg");
   const normal = useLoader(THREE.TextureLoader, "/Water_002_NORM.jpg");
   normal.wrapS = THREE.RepeatWrapping;
@@ -39,16 +43,19 @@ function Ocean() {
   });
 
   return (
-    <mesh position={[0, -0.2, 0]} rotation={[-Math.PI / 2, 0, 0]} scale={1000}>
-      <planeGeometry />
+    <mesh position={[0, -0.33, 0]} rotation={[-Math.PI / 2, 0, 0]} scale={1000}>
+      <planeGeometry args={[1, 1, 500, 500]} />{" "}
+      {/* find a better way to have displacement? */}
       <meshStandardMaterial
+        displacementMap={displace}
+        displacementScale={0.0005}
         bumpMap={height}
         aoMap={light}
         map={color}
         normalMap={normal}
         roughnessMap={rough}
       />
-      {/* <shaderMaterial fragmentShader={fragmentShader} /> */}
+      {<shaderMaterial fragmentShader={fragmentShader} />}
     </mesh>
   );
 }
