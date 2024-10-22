@@ -17,6 +17,9 @@ function DragInfo() {
     document.body.addEventListener("click", () => {
       document.getElementById("drag-info-component").style.opacity = 0;
     });
+    document.body.addEventListener("touchmove", () => {
+      document.getElementById("drag-info-component").style.opacity = 0;
+    });
   }, []);
 
   return (
