@@ -32,9 +32,9 @@ $paragraph: 1rem;
 $comment: 0.75rem;
 
 //mobile fonts
-$mobile-heading-one: 3rem;
-$mobile-heading-two: 2rem;
-$mobile-heading-three: 1rem;
+$mobile-heading-one: 2rem;
+$mobile-heading-two: 1.5rem;
+$mobile-heading-three: 1.2rem;
 $mobile-heading-four: 2rem;
 $mobile-heading-five: 2rem;
 $mobile-heading-six: 2rem;
@@ -48,3 +48,11 @@ $thin: 200;
 
 //breakpoints
 $min-desktop: 48em;
+
+//misc
+$brand-drop-shadow: 1px 1px 3px $dark-two;
+
+//global styling
+img {
+  box-shadow: $brand-drop-shadow;
+}

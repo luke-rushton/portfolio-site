@@ -24,7 +24,24 @@ h6 {
 }
 
 h1 {
-  font-size: $heading-one;
+  font-size: $mobile-heading-one;
+}
+h2 {
+  font-size: $mobile-heading-two;
+}
+h3 {
+  font-size: $mobile-heading-three;
+}
+@media (min-width: 48em) {
+  h1 {
+    font-size: $heading-one;
+  }
+  h2 {
+    font-size: $heading-two;
+  }
+  h3 {
+    font-size: $heading-three;
+  }
 }
 
 p {
