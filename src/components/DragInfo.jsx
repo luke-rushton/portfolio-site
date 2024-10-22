@@ -25,7 +25,7 @@ function DragInfo() {
   return (
     <div id="drag-info-component" className="drag-info">
       <animated.img style={swiper} src="/cursor-hollow.svg" />
-      <h2>Drag to Explore</h2>
+      <p>Drag to Explore</p>
     </div>
   );
 }

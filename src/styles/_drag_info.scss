@@ -12,16 +12,14 @@
 
   img {
     position: absolute;
-    width: 3rem;
+    width: 2.5rem;
     height: auto;
     top: 25%;
     box-shadow: none;
   }
-  h2 {
+  p {
     position: absolute;
-
-    top: 42%;
-    width: fit-content;
-    transform: translateY(-50%, -50%);
+    top: 35%;
+    font-size: 2rem;
   }
 }
