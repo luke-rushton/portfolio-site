@@ -44,9 +44,24 @@ function World() {
         <ambientLight intensity={Math.PI / 2} />
         {/* boat */}
         <Boat />
+        {/* lighting */}
+        <spotLight
+          decay={0.25}
+          position={[20, 200, 20]}
+          penumbra={0.9}
+          intensity={6}
+          angle={Math.PI / 2}
+        />
+        <spotLight
+          decay={0.25}
+          position={[20, 20, 20]}
+          penumbra={0.9}
+          intensity={5}
+          angle={Math.PI / 3}
+        />
         {/* ocean */}
         <Ocean />
-        {/* <Sky elevation={0} turbidity={0.01} /> */}
+        <Sky elevation={0} turbidity={0.01} />
         <HoverSections setPage={setPage} isVisible={isVisible} />
       </Canvas>
       {/* </Suspense> */}

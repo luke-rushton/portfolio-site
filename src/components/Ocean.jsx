@@ -1,10 +1,9 @@
 import React from "react";
 import { useMemo, useRef } from "react";
-import { useFrame } from "@react-three/fiber";
-import { MathUtils } from "three";
+import { useFrame, useLoader } from "@react-three/fiber";
+import * as THREE from "three";
 
 const fragmentShader = `
-uniform float u_time;
 
 void main() {
   gl_FragColor = vec4(0.7,0, 0.4, 0.1);
@@ -13,30 +12,43 @@ void main() {
 function Ocean() {
   const mesh = useRef();
 
-  //used in combination with useframe to track time within the shader
-  const uniforms = useMemo(
-    () => ({
-      u_time: {
-        value: 0.0,
-      },
-    }),
-    []
-  );
+  //loading water textures
+  const height = useLoader(THREE.TextureLoader, "/Water_002_DISP.png");
+  height.wrapS = THREE.RepeatWrapping;
+  height.wrapT = THREE.RepeatWrapping;
+  height.repeat.set(150, 150);
+  const color = useLoader(THREE.TextureLoader, "/Water_002_COLOR.jpg");
+  const normal = useLoader(THREE.TextureLoader, "/Water_002_NORM.jpg");
+  normal.wrapS = THREE.RepeatWrapping;
+  normal.wrapT = THREE.RepeatWrapping;
+  normal.repeat.set(150, 150);
+  const light = useLoader(THREE.TextureLoader, "/Water_002_OCC.jpg");
+  light.wrapS = THREE.RepeatWrapping;
+  light.wrapT = THREE.RepeatWrapping;
+  light.repeat.set(150, 150);
+  const rough = useLoader(THREE.TextureLoader, "/Water_002_ROUGH.jpg");
+  rough.wrapS = THREE.RepeatWrapping;
+  rough.wrapT = THREE.RepeatWrapping;
+  rough.repeat.set(150, 150);
 
   useFrame((state) => {
-    const { clock } = state;
-    mesh.current.material.uniforms.u_time.value = 0.4 * clock.getElapsedTime();
+    height.offset.x += 0.005;
+    normal.offset.x -= 0.005;
+    light.offset.x += 0.005;
+    rough.offset.x += 0.005;
   });
 
   return (
-    <mesh
-      ref={mesh}
-      position={[0, -0.2, 0]}
-      rotation={[-Math.PI / 2, 0, 0]}
-      scale={1000}
-    >
+    <mesh position={[0, -0.2, 0]} rotation={[-Math.PI / 2, 0, 0]} scale={1000}>
       <planeGeometry />
-      <shaderMaterial fragmentShader={fragmentShader} uniforms={uniforms} />
+      <meshStandardMaterial
+        bumpMap={height}
+        aoMap={light}
+        map={color}
+        normalMap={normal}
+        roughnessMap={rough}
+      />
+      {/* <shaderMaterial fragmentShader={fragmentShader} /> */}
     </mesh>
   );
 }
