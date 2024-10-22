@@ -8,11 +8,6 @@ function Header({ open }) {
     <header>
       <ul>
         <li>
-          <NavLink onClick={open} to={`/`}>
-            Home
-          </NavLink>
-        </li>
-        <li>
           <NavLink onClick={open} to={`/about`}>
             About
           </NavLink>

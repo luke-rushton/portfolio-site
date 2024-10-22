@@ -37,6 +37,7 @@ function Work() {
       {/* hero image */}
       {isLoaded ? (
         <img
+          className="splash-img"
           src={
             restData._embedded["wp:featuredmedia"][0].media_details.sizes.full
               .source_url
@@ -54,7 +55,7 @@ function Work() {
             <ExternalLink
               url={restData.acf.live_site_link.url}
               title={restData.acf.live_site_link.title}
-              img="/arrow-right-circle.svg"
+              img="/globe.svg"
             />
           ) : (
             <p>Loading...</p>
