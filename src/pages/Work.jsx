@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import ExternalLink from "../components/ExternalLink";
 import { NavLink } from "react-router-dom";
+import ContentPlaceholder from "../components/ContentPlaceholder";
 
 function Work() {
   //grab page id from url
@@ -29,58 +30,51 @@ function Work() {
   }, [restPath]);
 
   return (
-    <div className="work-page page-content">
-      <NavLink className="nav-button back-button" to={`/works/`}>
-        <img src="/arrow-left.svg" />
-      </NavLink>
+    <>
+      {isLoaded ? (
+        <div className="work-page page-content">
+          <NavLink className="nav-button back-button" to={`/works/`}>
+            <img src="/arrow-left.svg" />
+          </NavLink>
 
-      {/* hero image */}
-      {isLoaded ? (
-        <img
-          className="splash-img"
-          src={
-            restData._embedded["wp:featuredmedia"][0].media_details.sizes.full
-              .source_url
-          }
-        />
-      ) : (
-        <h2>Loading</h2>
-      )}
-      <section className="info-section">
-        {/* title */}
-        {isLoaded ? <h1>{restData.title.rendered}</h1> : <h1>Loading</h1>}
-        {/*external links */}
-        <div className="external-links">
-          {isLoaded ? (
-            <ExternalLink
-              url={restData.acf.live_site_link.url}
-              title={restData.acf.live_site_link.title}
-              img="/globe.svg"
-            />
-          ) : (
-            <p>Loading...</p>
-          )}
-          {isLoaded ? (
-            <ExternalLink
-              url={restData.acf.github_link.url}
-              title={restData.acf.github_link.title}
-              img="/github.svg"
-            />
-          ) : (
-            <p>Loading...</p>
-          )}
+          {/* hero image */}
+
+          <img
+            className="splash-img"
+            src={
+              restData._embedded["wp:featuredmedia"][0].media_details.sizes.full
+                .source_url
+            }
+          />
+
+          <section className="info-section">
+            {/* title */}
+            <h1>{restData.title.rendered}</h1>
+            {/*external links */}
+            <div className="external-links">
+              <ExternalLink
+                url={restData.acf.live_site_link.url}
+                title={restData.acf.live_site_link.title}
+                img="/globe.svg"
+              />
+
+              <ExternalLink
+                url={restData.acf.github_link.url}
+                title={restData.acf.github_link.title}
+                img="/github.svg"
+              />
+            </div>
+          </section>
+          {/*content */}
+          <div
+            className="work-wp-content"
+            dangerouslySetInnerHTML={{ __html: restData.content.rendered }}
+          ></div>
         </div>
-      </section>
-      {/*content */}
-      {isLoaded ? (
-        <div
-          className="work-wp-content"
-          dangerouslySetInnerHTML={{ __html: restData.content.rendered }}
-        ></div>
       ) : (
-        <h2>Loading</h2>
+        <ContentPlaceholder />
       )}
-    </div>
+    </>
   );
 }
 

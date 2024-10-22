@@ -1,5 +1,6 @@
 import React from "react";
 import { useState, useEffect } from "react";
+import ContentPlaceholder from "../components/ContentPlaceholder";
 
 function Experience() {
   //date for api call
@@ -21,19 +22,21 @@ function Experience() {
     fetchData();
   }, [restPath]);
   return (
-    <div className="experience-page page-content">
-      {/* title */}
-      {isLoaded ? <h1>{restData.title.rendered}</h1> : <h1>Loading</h1>}
-
-      {/*content */}
+    <>
       {isLoaded ? (
-        <div
-          dangerouslySetInnerHTML={{ __html: restData.content.rendered }}
-        ></div>
+        <div className="experience-page page-content">
+          {/* title */}
+          <h1>{restData.title.rendered}</h1>
+
+          {/*content */}
+          <div
+            dangerouslySetInnerHTML={{ __html: restData.content.rendered }}
+          ></div>
+        </div>
       ) : (
-        <h2>Loading</h2>
+        <ContentPlaceholder />
       )}
-    </div>
+    </>
   );
 }
 

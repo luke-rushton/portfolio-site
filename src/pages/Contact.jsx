@@ -1,6 +1,7 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
+import ContentPlaceholder from "../components/ContentPlaceholder";
 
 function Contact() {
   //grab page id from url
@@ -26,21 +27,24 @@ function Contact() {
   }, [restPath]);
 
   return (
-    <div className="contact-page page-content">
-      {/* hero image */}
-      {/* title */}
-      {isLoaded ? <h1>{restData.title.rendered}</h1> : <h1>Loading</h1>}
-      {/*external links */}
-
-      {/*content */}
+    <>
       {isLoaded ? (
-        <div
-          dangerouslySetInnerHTML={{ __html: restData.content.rendered }}
-        ></div>
+        <div className="contact-page page-content">
+          {/* hero image */}
+          {/* title */}
+          <h1>{restData.title.rendered}</h1>
+          {/*external links */}
+
+          {/*content */}
+
+          <div
+            dangerouslySetInnerHTML={{ __html: restData.content.rendered }}
+          ></div>
+        </div>
       ) : (
-        <h2>Loading</h2>
+        <ContentPlaceholder />
       )}
-    </div>
+    </>
   );
 }
 
