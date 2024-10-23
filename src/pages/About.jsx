@@ -29,6 +29,7 @@ function About() {
           <h1>{restData.title.rendered}</h1>
           {/*content */}
           <div
+            className="work-wp-content"
             dangerouslySetInnerHTML={{ __html: restData.content.rendered }}
           ></div>
         </div>

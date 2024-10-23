@@ -2,7 +2,7 @@ import React from "react";
 
 function ContactIcons() {
   return (
-    <section className="contact-icons">
+    <footer className="contact-icons">
       <a href="https://www.linkedin.com/in/luke-rushton/">
         <img src="/linkedin.svg" alt="linkedin logo" />
       </a>
@@ -12,7 +12,7 @@ function ContactIcons() {
       <a href="mailto:luke.rushtonx@gmail.com">
         <img src="/gmail.svg" alt="gmail logo" />
       </a>
-    </section>
+    </footer>
   );
 }
 

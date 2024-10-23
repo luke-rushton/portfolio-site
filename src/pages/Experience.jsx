@@ -30,6 +30,7 @@ function Experience() {
 
           {/*content */}
           <div
+            className="work-wp-content"
             dangerouslySetInnerHTML={{ __html: restData.content.rendered }}
           ></div>
         </div>
