@@ -6,6 +6,7 @@ import Ocean from "./Ocean";
 //ui components
 import Header from "./Header";
 import DragInfo from "./DragInfo";
+import ContactIcons from "./ContactIcons";
 
 //test objects
 import PopupPage from "./PopupPage";
@@ -47,6 +48,7 @@ function World() {
         open={() => isVisible("visible")}
         toggleAnimation={() => toggle(true)}
       />
+      <ContactIcons />
       <Canvas camera={{ position: [-20, 4, 0] }}>
         <ambientLight intensity={Math.PI / 2} />
         {/* boat */}
