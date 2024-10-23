@@ -20,21 +20,7 @@ function Home() {
     };
     fetchData();
   }, [restPath]);
-  return (
-    <div className="home-page page-content">
-      {/* title */}
-      {isLoaded ? <h1>{restData.title.rendered}</h1> : <h1>Loading</h1>}
-
-      {/*content */}
-      {isLoaded ? (
-        <div
-          dangerouslySetInnerHTML={{ __html: restData.content.rendered }}
-        ></div>
-      ) : (
-        <h2>Loading</h2>
-      )}
-    </div>
-  );
+  return <div className="home-page page-content"></div>;
 }
 
 export default Home;

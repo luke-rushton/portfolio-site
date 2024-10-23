@@ -68,7 +68,7 @@ function World() {
         />
         {/* ocean */}
         <Ocean />
-        {/* <Sky elevation={0} turbidity={0.01} /> */}
+        {/*<Sky elevation={0} turbidity={0.01} /> */}
         <HoverSections
           setPage={setPage}
           isVisible={isVisible}

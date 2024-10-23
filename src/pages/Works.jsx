@@ -36,8 +36,8 @@ function Works() {
                 id={work.id}
                 title={work.title.rendered}
                 image={
-                  work._embedded["wp:featuredmedia"][0].media_details.sizes
-                    .medium.source_url
+                  work._embedded["wp:featuredmedia"][0].media_details.sizes.full
+                    .source_url
                 }
               />
             ))}
