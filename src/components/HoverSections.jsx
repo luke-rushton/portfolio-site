@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Html, Text } from "@react-three/drei";
 import {
   EffectComposer,
@@ -35,6 +35,12 @@ function HoverSections({ setPage, isVisible, toggleAnimation }) {
   //navigation
   const navigate = useNavigate();
 
+  //mouse change hover
+  const [mouseHover, setMouseHover] = useState(false);
+  useEffect(() => {
+    document.body.style.cursor = mouseHover ? "pointer" : "auto";
+  }, [mouseHover]);
+
   return (
     <Selection>
       {/*outline effect */}
@@ -55,8 +61,12 @@ function HoverSections({ setPage, isVisible, toggleAnimation }) {
         onPointerEnter={(e) => {
           e.stopPropagation();
           hoverOne(true);
+          setMouseHover(true);
         }}
-        onPointerOut={() => hoverOne(false)}
+        onPointerOut={() => {
+          hoverOne(false);
+          setMouseHover(false);
+        }}
         onClick={() => {
           isVisible("visible");
           setPage("12");
@@ -73,8 +83,12 @@ function HoverSections({ setPage, isVisible, toggleAnimation }) {
         onPointerEnter={(e) => {
           e.stopPropagation();
           hoverTwo(true);
+          setMouseHover(true);
         }}
-        onPointerOut={() => hoverTwo(false)}
+        onPointerOut={() => {
+          hoverTwo(false);
+          setMouseHover(false);
+        }}
         onClick={() => {
           isVisible("visible");
           setPage("17");
@@ -91,8 +105,12 @@ function HoverSections({ setPage, isVisible, toggleAnimation }) {
         onPointerEnter={(e) => {
           e.stopPropagation();
           hoverThree(true);
+          setMouseHover(true);
         }}
-        onPointerOut={() => hoverThree(false)}
+        onPointerOut={() => {
+          hoverThree(false);
+          setMouseHover(false);
+        }}
         stopPropagation
         onClick={() => {
           isVisible("visible");
@@ -110,8 +128,12 @@ function HoverSections({ setPage, isVisible, toggleAnimation }) {
         onPointerEnter={(e) => {
           e.stopPropagation();
           hoverFour(true);
+          setMouseHover(true);
         }}
-        onPointerOut={() => hoverFour(false)}
+        onPointerOut={() => {
+          hoverFour(false);
+          setMouseHover(false);
+        }}
         onClick={() => {
           isVisible("visible");
           setPage("8");
@@ -128,8 +150,12 @@ function HoverSections({ setPage, isVisible, toggleAnimation }) {
         onPointerEnter={(e) => {
           e.stopPropagation();
           hoverFive(true);
+          setMouseHover(true);
         }}
-        onPointerOut={() => hoverFive(false)}
+        onPointerOut={() => {
+          hoverFive(false);
+          setMouseHover(false);
+        }}
         onClick={() => {
           isVisible("visible");
           setPage("40");
@@ -146,8 +172,12 @@ function HoverSections({ setPage, isVisible, toggleAnimation }) {
         onPointerEnter={(e) => {
           e.stopPropagation();
           hoverSix(true);
+          setMouseHover(true);
         }}
-        onPointerOut={() => hoverSix(false)}
+        onPointerOut={() => {
+          hoverSix(false);
+          setMouseHover(false);
+        }}
         onClick={() => {
           isVisible("visible");
           setPage("8");

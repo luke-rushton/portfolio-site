@@ -39,15 +39,23 @@ function PopupPage({ active, close, page, animationState, toggleAnimation }) {
       duration: 200,
     },
   });
+
+  const { top } = useSpring({
+    from: { top: 64 },
+    top: animationState ? 0 : 64,
+    config: {
+      duration: 200,
+    },
+  });
   return (
-    <div className={`popup-mask ${active}`}>
+    <animated.div className={`popup-mask ${active}`} style={{ top: top }}>
       <animated.article className={`popup`} style={{ opacity: opacity }}>
         <div className="popup-heading-mask"></div>
         <button
           className="nav-button close-button"
           onClick={() => {
-            close();
             toggleAnimation();
+            close();
           }}
         >
           <img src="/x-mark.svg" />
@@ -63,7 +71,7 @@ function PopupPage({ active, close, page, animationState, toggleAnimation }) {
           <Route path="/work/:id" element={<Work />} />
         </Routes>
       </animated.article>
-    </div>
+    </animated.div>
   );
 }
 

@@ -13,6 +13,7 @@ function Boat() {
   useFrame(() => {
     let x = Math.sin(ref.current.getAzimuthalAngle()) * 14;
     let z = Math.cos(ref.current.getAzimuthalAngle()) * 14;
+    //improve this with maath easing
     boatRef.current.position.x = x;
     boatRef.current.position.z = z;
     boatRef.current.rotation.y = Math.PI / 2 + ref.current.getAzimuthalAngle();

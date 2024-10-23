@@ -8,8 +8,10 @@ import Testing from "../pages/Work";
 function WorkThumbnail({ id, title, image }) {
   return (
     <section className="work-thumbnail">
-      <img src={image} />
-      <NavLink to={`/work/${id}`}>{title}</NavLink>
+      <NavLink to={`/work/${id}`}>
+        <img src={image} />
+        <h2>{title}</h2>
+      </NavLink>
     </section>
   );
 }
