@@ -60,7 +60,6 @@ function PopupPage({ active, close, page, animationState, toggleAnimation }) {
         >
           <img src="/x-mark.svg" />
         </button>
-
         {/* ROUTER GOES HERE */}
         <Routes>
           <Route path="/" exact element={<Home />} />

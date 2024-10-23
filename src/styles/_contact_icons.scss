@@ -1,0 +1,28 @@
+@import "global_brand";
+
+.contact-icons {
+  display: block;
+  position: fixed;
+  z-index: 100;
+  bottom: 1rem;
+  right: 1rem;
+  display: flex;
+  flex-direction: column;
+  width: fit-content;
+
+  background-color: $background;
+  backdrop-filter: brightness(90%) blur(20px);
+  border-radius: $radius-small;
+  box-shadow: $brand-drop-shadow;
+
+  a {
+    width: 1.75rem;
+    margin: 0.5rem;
+
+    img {
+      display: block;
+      width: 100%;
+      box-shadow: none;
+    }
+  }
+}
