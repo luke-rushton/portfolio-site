@@ -21,6 +21,8 @@ import { useNavigate } from "react-router-dom";
 function World() {
   //Popup Visibility
   const [visibility, isVisible] = useState("invisible");
+  //page pop in animation
+  const [state, toggle] = useState(false);
   //navigation
   const navigate = useNavigate();
 
@@ -35,11 +37,16 @@ function World() {
           navigate("/");
         }}
         page={page}
+        animationState={state}
+        toggleAnimation={() => toggle(false)}
       />
       <Loading />
       <DragInfo />
       {/* <Suspense fallback={<Loading />}> */}
-      <Header open={() => isVisible("visible")} />
+      <Header
+        open={() => isVisible("visible")}
+        toggleAnimation={() => toggle(true)}
+      />
       <Canvas camera={{ position: [-20, 4, 0] }}>
         <ambientLight intensity={Math.PI / 2} />
         {/* boat */}
@@ -62,7 +69,11 @@ function World() {
         {/* ocean */}
         <Ocean />
         {/* <Sky elevation={0} turbidity={0.01} /> */}
-        <HoverSections setPage={setPage} isVisible={isVisible} />
+        <HoverSections
+          setPage={setPage}
+          isVisible={isVisible}
+          toggleAnimation={() => toggle(true)}
+        />
       </Canvas>
       {/* </Suspense> */}
     </div>

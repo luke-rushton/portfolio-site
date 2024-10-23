@@ -4,7 +4,6 @@ import { useFrame, useLoader } from "@react-three/fiber";
 import * as THREE from "three";
 
 const fragmentShader = `
-
 void main() {
   gl_FragColor = vec4(0.7,0, 0.4, 0.1);
 }`;
@@ -44,7 +43,7 @@ function Ocean() {
 
   return (
     <mesh position={[0, -0.33, 0]} rotation={[-Math.PI / 2, 0, 0]} scale={1000}>
-      <planeGeometry args={[1, 1, 500, 500]} />{" "}
+      <planeGeometry args={[1, 1, 500, 500]} />
       {/* find a better way to have displacement? */}
       <meshStandardMaterial
         displacementMap={displace}
@@ -55,7 +54,7 @@ function Ocean() {
         normalMap={normal}
         roughnessMap={rough}
       />
-      {<shaderMaterial fragmentShader={fragmentShader} />}
+      <shaderMaterial fragmentShader={fragmentShader} />
     </mesh>
   );
 }

@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
-import { div } from "three/webgpu";
 //routing imports
 import { Routes, Route } from "react-router-dom";
 import { APP_FOLDER_NAME } from "../globals";
+import { useSpring, animated } from "react-spring";
 
 //pages
 import Home from "../pages/Home";
@@ -12,7 +12,7 @@ import Work from "../pages/Work";
 import Experience from "../pages/Experience";
 import Contact from "../pages/Contact";
 
-function PopupPage({ active, close, page }) {
+function PopupPage({ active, close, page, animationState, toggleAnimation }) {
   const restPath = "http://localhost/portfolio/wp-json/wp/v2/pages/" + page;
   const [restData, setData] = useState([]);
   const [isLoaded, setLoadStatus] = useState(false);
@@ -31,11 +31,25 @@ function PopupPage({ active, close, page }) {
     fetchData();
   }, [restPath]);
 
+  //animations
+  const { opacity } = useSpring({
+    from: { opacity: 0 },
+    opacity: animationState ? 1 : 0,
+    config: {
+      duration: 200,
+    },
+  });
   return (
     <div className={`popup-mask ${active}`}>
-      <article className={`popup`}>
+      <animated.article className={`popup`} style={{ opacity: opacity }}>
         <div className="popup-heading-mask"></div>
-        <button className="nav-button close-button" onClick={close}>
+        <button
+          className="nav-button close-button"
+          onClick={() => {
+            close();
+            toggleAnimation();
+          }}
+        >
           <img src="/x-mark.svg" />
         </button>
 
@@ -48,7 +62,7 @@ function PopupPage({ active, close, page }) {
           <Route path="/experience" element={<Experience />} />
           <Route path="/work/:id" element={<Work />} />
         </Routes>
-      </article>
+      </animated.article>
     </div>
   );
 }

@@ -23,7 +23,7 @@ import HoverHtml from "./HoverHtml";
 
 import Island from "./Island";
 
-function HoverSections({ setPage, isVisible }) {
+function HoverSections({ setPage, isVisible, toggleAnimation }) {
   //hover effect state
   const [hoveredOne, hoverOne] = useState(null);
   const [hoveredTwo, hoverTwo] = useState(null);
@@ -61,6 +61,7 @@ function HoverSections({ setPage, isVisible }) {
           isVisible("visible");
           setPage("12");
           navigate("/contact");
+          toggleAnimation();
         }}
       >
         <sphereGeometry args={[4, 8, 8]} />
@@ -78,6 +79,7 @@ function HoverSections({ setPage, isVisible }) {
           isVisible("visible");
           setPage("17");
           navigate("/works");
+          toggleAnimation();
         }}
       >
         <sphereGeometry args={[4, 8, 8]} />
@@ -96,6 +98,7 @@ function HoverSections({ setPage, isVisible }) {
           isVisible("visible");
           setPage("12");
           navigate("/about");
+          toggleAnimation();
         }}
       >
         <sphereGeometry args={[4, 8, 8]} />
@@ -113,6 +116,7 @@ function HoverSections({ setPage, isVisible }) {
           isVisible("visible");
           setPage("8");
           navigate("/experience");
+          toggleAnimation();
         }}
       >
         <sphereGeometry args={[4, 8, 8]} />
@@ -130,6 +134,7 @@ function HoverSections({ setPage, isVisible }) {
           isVisible("visible");
           setPage("40");
           navigate("/");
+          toggleAnimation();
         }}
       >
         <sphereGeometry args={[4, 8, 8]} />
@@ -147,6 +152,7 @@ function HoverSections({ setPage, isVisible }) {
           isVisible("visible");
           setPage("8");
           navigate("/experience");
+          toggleAnimation();
         }}
       >
         <sphereGeometry args={[4, 8, 8]} />

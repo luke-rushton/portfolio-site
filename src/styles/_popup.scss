@@ -2,11 +2,11 @@
 
 //move this somewhere else maybe?
 .invisible {
-  display: none;
+  pointer-events: none;
 }
 //this isn't strictly necessary, but it helps code readability
 .visible {
-  display: block;
+  pointer-events: all;
 }
 
 .popup-mask {
