@@ -17,6 +17,8 @@ import tempIsland from "../data/tempIsland";
 import emptyProps from "../data/emptyProps";
 import bigIsland from "../data/bigIsland";
 import bigIslandProps from "../data/bigIslandProps";
+import experienceProps from "../data/experienceProps";
+import experienceTiles from "../data/experienceTiles";
 
 //hover text
 import HoverHtml from "./HoverHtml";
@@ -190,7 +192,11 @@ function HoverSections({ setPage, isVisible, toggleAnimation }) {
       </mesh>
 
       {/* the world */}
-      <Island position={[0, 0, 0]} tileset={bigIsland} propset={emptyProps} />
+      <Island
+        position={[0, 0, 0]}
+        tileset={bigIsland}
+        propset={bigIslandProps}
+      />
 
       <Select enabled={hoveredOne}>
         <Island
@@ -231,8 +237,8 @@ function HoverSections({ setPage, isVisible, toggleAnimation }) {
       <Select enabled={hoveredFour}>
         <Island
           position={[-6, 0, 2 * Math.sqrt(3)]}
-          tileset={tempIsland}
-          propset={emptyProps}
+          tileset={experienceTiles}
+          propset={experienceProps}
         />
         <HoverHtml
           position={[-6, 2, 2 * Math.sqrt(3)]}
