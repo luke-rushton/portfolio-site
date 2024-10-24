@@ -1,6 +1,7 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import ContentPlaceholder from "../components/ContentPlaceholder";
+import { useSpring, animated } from "react-spring";
 
 function Experience() {
   //date for api call
@@ -21,10 +22,19 @@ function Experience() {
     };
     fetchData();
   }, [restPath]);
+
+  //animations
+  const fadeIn = useSpring({
+    from: { opacity: 0 },
+    opacity: isLoaded ? 1 : 0,
+    config: {
+      duration: 500,
+    },
+  });
   return (
     <>
       {isLoaded ? (
-        <div className="experience-page page-content">
+        <animated.div className="experience-page page-content" style={fadeIn}>
           {/* title */}
           <h1>{restData.title.rendered}</h1>
 
@@ -33,7 +43,7 @@ function Experience() {
             className="work-wp-content"
             dangerouslySetInnerHTML={{ __html: restData.content.rendered }}
           ></div>
-        </div>
+        </animated.div>
       ) : (
         <ContentPlaceholder />
       )}
