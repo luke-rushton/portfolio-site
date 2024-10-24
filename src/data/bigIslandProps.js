@@ -57,7 +57,42 @@ const bigIslandProps = [
         position: [-1, 1, -Math.sqrt(3)],
         rotation: [0, (1 * -Math.PI) / 3, 0]
     },
-
+    //trees to dock
+    {
+        model: 'tree_single_A',
+        position: [-8, 0, -0.5],
+        rotation: [0, (5 * -Math.PI) / 3, 0]
+    },
+    {
+        model: 'tree_single_A',
+        position: [-6, 0, 0.5],
+        rotation: [0, (4 * -Math.PI) / 3, 0]
+    },
+    {
+        model: 'tree_single_A',
+        position: [-10, 0, 0.7],
+        rotation: [0, (3 * -Math.PI) / 3, 0]
+    },
+    {
+        model: 'tree_single_A',
+        position: [-4, 0.5, -0.4],
+        rotation: [0, (2 * -Math.PI) / 3, 0]
+    },
+    {
+        model: 'trees_A_small',
+        position: [-1.3, 1, Math.sqrt(3) + 0.3],
+        rotation: [0, (3 * -Math.PI) / 3, 0]
+    },
+    {
+        model: 'rock_single_E',
+        position: [-9, 0, 0.4],
+        rotation: [0, (3 * -Math.PI) / 3, 0]
+    },
+    {
+        model: 'rock_single_E',
+        position: [-6.5, 0, -0.45],
+        rotation: [0, (1 * -Math.PI) / 3, 0]
+    },
 
     //starting dock
     {
