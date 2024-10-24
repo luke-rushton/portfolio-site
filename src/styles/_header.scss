@@ -16,12 +16,23 @@ header {
     margin: 1rem 1rem;
     display: flex;
     justify-content: space-between;
+
+    a {
+      text-shadow: $brand-drop-shadow;
+    }
   }
   @media (min-width: $min-desktop) {
     //opacity: 50%;
 
     ul {
       margin: 1rem 4rem;
+    }
+  }
+  img {
+    width: 1.5rem;
+    border-radius: 50%;
+    @media (min-width: $min-desktop) {
+      width: 1.75rem;
     }
   }
 }

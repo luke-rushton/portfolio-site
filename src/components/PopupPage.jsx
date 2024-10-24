@@ -12,25 +12,7 @@ import Work from "../pages/Work";
 import Experience from "../pages/Experience";
 import Contact from "../pages/Contact";
 
-function PopupPage({ active, close, page, animationState, toggleAnimation }) {
-  const restPath = "http://localhost/portfolio/wp-json/wp/v2/pages/" + page;
-  const [restData, setData] = useState([]);
-  const [isLoaded, setLoadStatus] = useState(false);
-
-  useEffect(() => {
-    const fetchData = async () => {
-      const response = await fetch(restPath);
-      if (response.ok) {
-        const data = await response.json();
-        setData(data);
-        setLoadStatus(true);
-      } else {
-        setLoadStatus(false);
-      }
-    };
-    fetchData();
-  }, [restPath]);
-
+function PopupPage({ active, close, animationState, toggleAnimation }) {
   //animations
   const { opacity } = useSpring({
     from: { opacity: 0 },
@@ -65,7 +47,6 @@ function PopupPage({ active, close, page, animationState, toggleAnimation }) {
           <Route path="/" exact element={<Home />} />
           <Route path="/about" element={<About />} />
           <Route path="/works" element={<Works />} />
-          <Route path="/contact" element={<Contact />} />
           <Route path="/experience" element={<Experience />} />
           <Route path="/work/:id" element={<Work />} />
         </Routes>

@@ -25,7 +25,7 @@ import HoverHtml from "./HoverHtml";
 
 import Island from "./Island";
 
-function HoverSections({ setPage, isVisible, toggleAnimation }) {
+function HoverSections({ isVisible, toggleAnimation }) {
   //hover effect state
   const [hoveredOne, hoverOne] = useState(null);
   const [hoveredTwo, hoverTwo] = useState(null);
@@ -65,19 +65,18 @@ function HoverSections({ setPage, isVisible, toggleAnimation }) {
           hoverOne(true);
           setMouseHover(true);
         }}
-        onPointerOut={() => {
+        onPointerOut={(e) => {
+          e.stopPropagation();
           hoverOne(false);
           setMouseHover(false);
         }}
-        onClick={() => {
-          isVisible("visible");
-          setPage("12");
-          navigate("/contact");
-          toggleAnimation();
+        onClick={(e) => {
+          e.stopPropagation();
+          window.open("https://github.com/luke-rushton", "_blank");
         }}
       >
         <sphereGeometry args={[4, 8, 8]} />
-        <meshStandardMaterial opacity={0} transparent />
+        <meshStandardMaterial opacity={0.2} transparent />
       </mesh>
 
       <mesh
@@ -87,19 +86,20 @@ function HoverSections({ setPage, isVisible, toggleAnimation }) {
           hoverTwo(true);
           setMouseHover(true);
         }}
-        onPointerOut={() => {
+        onPointerOut={(e) => {
+          e.stopPropagation();
           hoverTwo(false);
           setMouseHover(false);
         }}
-        onClick={() => {
+        onClick={(e) => {
+          e.stopPropagation();
           isVisible("visible");
-          setPage("17");
-          navigate("/works");
+          navigate("/about");
           toggleAnimation();
         }}
       >
         <sphereGeometry args={[4, 8, 8]} />
-        <meshStandardMaterial opacity={0} transparent />
+        <meshStandardMaterial opacity={0.2} transparent />
       </mesh>
 
       <mesh
@@ -109,20 +109,18 @@ function HoverSections({ setPage, isVisible, toggleAnimation }) {
           hoverThree(true);
           setMouseHover(true);
         }}
-        onPointerOut={() => {
+        onPointerOut={(e) => {
+          e.stopPropagation();
           hoverThree(false);
           setMouseHover(false);
         }}
-        stopPropagation
-        onClick={() => {
-          isVisible("visible");
-          setPage("12");
-          navigate("/about");
-          toggleAnimation();
+        onClick={(e) => {
+          e.stopPropagation();
+          window.open("https://www.linkedin.com/in/luke-rushton/", "_blank");
         }}
       >
         <sphereGeometry args={[4, 8, 8]} />
-        <meshStandardMaterial opacity={0} transparent />
+        <meshStandardMaterial opacity={0.2} transparent />
       </mesh>
 
       <mesh
@@ -132,19 +130,20 @@ function HoverSections({ setPage, isVisible, toggleAnimation }) {
           hoverFour(true);
           setMouseHover(true);
         }}
-        onPointerOut={() => {
+        onPointerOut={(e) => {
+          e.stopPropagation();
           hoverFour(false);
           setMouseHover(false);
         }}
-        onClick={() => {
+        onClick={(e) => {
+          e.stopPropagation();
           isVisible("visible");
-          setPage("8");
           navigate("/experience");
           toggleAnimation();
         }}
       >
         <sphereGeometry args={[4, 8, 8]} />
-        <meshStandardMaterial opacity={0} transparent />
+        <meshStandardMaterial opacity={0.2} transparent />
       </mesh>
 
       <mesh
@@ -154,19 +153,18 @@ function HoverSections({ setPage, isVisible, toggleAnimation }) {
           hoverFive(true);
           setMouseHover(true);
         }}
-        onPointerOut={() => {
+        onPointerOut={(e) => {
+          e.stopPropagation();
           hoverFive(false);
           setMouseHover(false);
         }}
-        onClick={() => {
-          isVisible("visible");
-          setPage("40");
-          navigate("/");
-          toggleAnimation();
+        onClick={(e) => {
+          e.stopPropagation();
+          window.open("mailto:luke.rushtonx@gmail.com", "_blank");
         }}
       >
         <sphereGeometry args={[4, 8, 8]} />
-        <meshStandardMaterial opacity={0} transparent />
+        <meshStandardMaterial opacity={0.2} transparent />
       </mesh>
 
       <mesh
@@ -176,14 +174,15 @@ function HoverSections({ setPage, isVisible, toggleAnimation }) {
           hoverSix(true);
           setMouseHover(true);
         }}
-        onPointerOut={() => {
+        onPointerOut={(e) => {
+          e.stopPropagation();
           hoverSix(false);
           setMouseHover(false);
         }}
-        onClick={() => {
+        onClick={(e) => {
+          e.stopPropagation();
           isVisible("visible");
-          setPage("8");
-          navigate("/experience");
+          navigate("/works");
           toggleAnimation();
         }}
       >
@@ -195,8 +194,60 @@ function HoverSections({ setPage, isVisible, toggleAnimation }) {
       <Island
         position={[0, 0, 0]}
         tileset={bigIsland}
-        propset={bigIslandProps}
+        propset={emptyProps /*bigIslandProps*/}
       />
+
+      <Select enabled={hoveredFour}>
+        <Island
+          position={[-6, 0, 2 * Math.sqrt(3)]}
+          tileset={experienceTiles}
+          propset={emptyProps /*experienceProps*/}
+        />
+        <HoverHtml
+          position={[-6, 2, 2 * Math.sqrt(3)]}
+          visible={hoveredFour}
+          title="Experience"
+        />
+      </Select>
+
+      <Select enabled={hoveredSix}>
+        <Island
+          position={[0, 0, 4 * Math.sqrt(3)]}
+          tileset={tempIsland}
+          propset={emptyProps}
+        />
+        <HoverHtml
+          position={[0, 2, 4 * Math.sqrt(3)]}
+          visible={hoveredSix}
+          title="Works"
+        />
+      </Select>
+
+      <Select enabled={hoveredTwo}>
+        <Island
+          position={[6, 0, 2 * Math.sqrt(3)]}
+          tileset={tempIsland}
+          propset={emptyProps}
+        />
+        <HoverHtml
+          position={[6, 2, 2 * Math.sqrt(3)]}
+          visible={hoveredTwo}
+          title="About"
+        />
+      </Select>
+
+      <Select enabled={hoveredThree}>
+        <Island
+          position={[6, 0, -2 * Math.sqrt(3)]}
+          tileset={tempIsland}
+          propset={emptyProps}
+        />
+        <HoverHtml
+          position={[6, 2, -2 * Math.sqrt(3)]}
+          visible={hoveredThree}
+          title="LinkedIn"
+        />
+      </Select>
 
       <Select enabled={hoveredOne}>
         <Island
@@ -207,45 +258,10 @@ function HoverSections({ setPage, isVisible, toggleAnimation }) {
         <HoverHtml
           position={[0, 2, -4 * Math.sqrt(3)]}
           visible={hoveredOne}
-          title="Contact"
+          title="Github"
         />
       </Select>
-      <Select enabled={hoveredTwo}>
-        <Island
-          position={[6, 0, 2 * Math.sqrt(3)]}
-          tileset={tempIsland}
-          propset={emptyProps}
-        />
-        <HoverHtml
-          position={[6, 2, 2 * Math.sqrt(3)]}
-          visible={hoveredTwo}
-          title="Works"
-        />
-      </Select>
-      <Select enabled={hoveredThree}>
-        <Island
-          position={[6, 0, -2 * Math.sqrt(3)]}
-          tileset={tempIsland}
-          propset={emptyProps}
-        />
-        <HoverHtml
-          position={[6, 2, -2 * Math.sqrt(3)]}
-          visible={hoveredThree}
-          title="About"
-        />
-      </Select>
-      <Select enabled={hoveredFour}>
-        <Island
-          position={[-6, 0, 2 * Math.sqrt(3)]}
-          tileset={experienceTiles}
-          propset={experienceProps}
-        />
-        <HoverHtml
-          position={[-6, 2, 2 * Math.sqrt(3)]}
-          visible={hoveredFour}
-          title="Experience"
-        />
-      </Select>
+
       <Select enabled={hoveredFive}>
         <Island
           position={[-6, 0, -2 * Math.sqrt(3)]}
@@ -255,21 +271,9 @@ function HoverSections({ setPage, isVisible, toggleAnimation }) {
         <HoverHtml
           position={[-6, 2, -2 * Math.sqrt(3)]}
           visible={hoveredFive}
-          title="home"
+          title="Email"
         />
       </Select>
-      <Select enabled={hoveredSix}>
-        <Island
-          position={[0, 0, 4 * Math.sqrt(3)]}
-          tileset={tempIsland}
-          propset={emptyProps}
-        />
-      </Select>
-      <HoverHtml
-        position={[0, 2, 4 * Math.sqrt(3)]}
-        visible={hoveredSix}
-        title="Experience"
-      />
     </Selection>
   );
 }

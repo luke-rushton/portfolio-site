@@ -6,7 +6,6 @@ import Ocean from "./Ocean";
 //ui components
 import Header from "./Header";
 import DragInfo from "./DragInfo";
-import ContactIcons from "./ContactIcons";
 
 //test objects
 import PopupPage from "./PopupPage";
@@ -28,7 +27,7 @@ function World() {
   const navigate = useNavigate();
 
   //track what page we want to load based on clicked island
-  const [page, setPage] = useState("8");
+
   return (
     <div className="world">
       <PopupPage
@@ -37,7 +36,6 @@ function World() {
           isVisible("invisible");
           navigate("/");
         }}
-        page={page}
         animationState={state}
         toggleAnimation={() => toggle(false)}
       />
@@ -48,7 +46,6 @@ function World() {
         open={() => isVisible("visible")}
         toggleAnimation={() => toggle(true)}
       />
-      <ContactIcons />
       <Canvas camera={{ position: [-20, 4, 0] }}>
         <ambientLight intensity={Math.PI / 2} />
         {/* boat */}
@@ -72,7 +69,6 @@ function World() {
         <Ocean />
         {/*<Sky elevation={0} turbidity={0.01} /> */}
         <HoverSections
-          setPage={setPage}
           isVisible={isVisible}
           toggleAnimation={() => toggle(true)}
         />

@@ -10,6 +10,7 @@ function HoverHtml({ position, visible, title }) {
       style={{
         transition: "0.5s",
         opacity: visible ? 1 : 0,
+        pointerEvents: "none",
       }}
     >
       <h2>{title}</h2>
