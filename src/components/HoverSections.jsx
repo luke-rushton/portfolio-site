@@ -195,7 +195,7 @@ function HoverSections({ setPage, isVisible, toggleAnimation }) {
       <Island
         position={[0, 0, 0]}
         tileset={bigIsland}
-        propset={bigIslandProps}
+        propset={emptyProps /*bigIslandProps*/}
       />
 
       <Select enabled={hoveredOne}>
@@ -238,7 +238,7 @@ function HoverSections({ setPage, isVisible, toggleAnimation }) {
         <Island
           position={[-6, 0, 2 * Math.sqrt(3)]}
           tileset={experienceTiles}
-          propset={experienceProps}
+          propset={emptyProps /*experienceProps*/}
         />
         <HoverHtml
           position={[-6, 2, 2 * Math.sqrt(3)]}
