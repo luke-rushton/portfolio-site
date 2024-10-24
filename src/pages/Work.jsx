@@ -4,6 +4,7 @@ import { useParams } from "react-router-dom";
 import ExternalLink from "../components/ExternalLink";
 import { NavLink } from "react-router-dom";
 import ContentPlaceholder from "../components/ContentPlaceholder";
+import { useSpring, animated } from "react-spring";
 
 function Work() {
   //grab page id from url
@@ -29,10 +30,18 @@ function Work() {
     fetchData();
   }, [restPath]);
 
+  //animations
+  const fadeIn = useSpring({
+    from: { opacity: 0 },
+    opacity: isLoaded ? 1 : 0,
+    config: {
+      duration: 500,
+    },
+  });
   return (
     <>
       {isLoaded ? (
-        <div className="work-page page-content">
+        <animated.div className="work-page page-content" style={fadeIn}>
           <NavLink className="nav-button back-button" to={`/works/`}>
             <img src="/arrow-left.svg" />
           </NavLink>
@@ -70,7 +79,7 @@ function Work() {
             className="work-wp-content"
             dangerouslySetInnerHTML={{ __html: restData.content.rendered }}
           ></div>
-        </div>
+        </animated.div>
       ) : (
         <ContentPlaceholder />
       )}
