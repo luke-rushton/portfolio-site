@@ -49,6 +49,18 @@
         grid-column: 2;
       }
     }
+    .wp-block-code {
+      max-width: 100%;
+      overflow-x: scroll;
+      background-color: $dark-one;
+      border-radius: $radius-medium;
+      box-shadow: $brand-drop-shadow;
+      padding: 0.5rem;
+    }
+    code {
+      display: block;
+      color: $light-one;
+    }
     img {
       box-shadow: $brand-drop-shadow;
     }
