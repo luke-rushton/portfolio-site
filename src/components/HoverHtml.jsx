@@ -7,8 +7,8 @@ function HoverHtml({ position, visible, title }) {
       center
       zIndexRange={[10, 0]}
       position={position}
+      className={"hover-title"}
       style={{
-        transition: "0.5s",
         opacity: visible ? 1 : 0,
         pointerEvents: "none",
       }}

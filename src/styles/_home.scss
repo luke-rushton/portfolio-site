@@ -1,3 +1,12 @@
+@import "global_brand";
+
 .home-page {
   grid-template-rows: max(6rem);
+}
+.hover-title {
+  transition: 0.25s;
+  background-color: $background;
+  padding: 0.25rem;
+  border-radius: $radius-small;
+  box-shadow: $brand-drop-shadow;
 }
