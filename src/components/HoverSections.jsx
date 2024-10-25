@@ -19,6 +19,7 @@ import bigIsland from "../data/bigIsland";
 import bigIslandProps from "../data/bigIslandProps";
 import experienceProps from "../data/experienceProps";
 import experienceTiles from "../data/experienceTiles";
+import linkedInProps from "../data/linkedInProps";
 
 //hover text
 import HoverHtml from "./HoverHtml";
@@ -76,7 +77,7 @@ function HoverSections({ isVisible, toggleAnimation }) {
         }}
       >
         <sphereGeometry args={[4, 8, 8]} />
-        <meshStandardMaterial opacity={0.2} transparent />
+        <meshStandardMaterial opacity={0} transparent />
       </mesh>
 
       <mesh
@@ -99,7 +100,7 @@ function HoverSections({ isVisible, toggleAnimation }) {
         }}
       >
         <sphereGeometry args={[4, 8, 8]} />
-        <meshStandardMaterial opacity={0.2} transparent />
+        <meshStandardMaterial opacity={0} transparent />
       </mesh>
 
       <mesh
@@ -120,7 +121,7 @@ function HoverSections({ isVisible, toggleAnimation }) {
         }}
       >
         <sphereGeometry args={[4, 8, 8]} />
-        <meshStandardMaterial opacity={0.2} transparent />
+        <meshStandardMaterial opacity={0} transparent />
       </mesh>
 
       <mesh
@@ -143,7 +144,7 @@ function HoverSections({ isVisible, toggleAnimation }) {
         }}
       >
         <sphereGeometry args={[4, 8, 8]} />
-        <meshStandardMaterial opacity={0.2} transparent />
+        <meshStandardMaterial opacity={0} transparent />
       </mesh>
 
       <mesh
@@ -164,7 +165,7 @@ function HoverSections({ isVisible, toggleAnimation }) {
         }}
       >
         <sphereGeometry args={[4, 8, 8]} />
-        <meshStandardMaterial opacity={0.2} transparent />
+        <meshStandardMaterial opacity={0} transparent />
       </mesh>
 
       <mesh
@@ -187,21 +188,21 @@ function HoverSections({ isVisible, toggleAnimation }) {
         }}
       >
         <sphereGeometry args={[4, 8, 8]} />
-        <meshStandardMaterial opacity={0.3} transparent />
+        <meshStandardMaterial opacity={0} transparent />
       </mesh>
 
       {/* the world */}
       <Island
         position={[0, 0, 0]}
         tileset={bigIsland}
-        propset={emptyProps /*bigIslandProps*/}
+        propset={bigIslandProps}
       />
 
       <Select enabled={hoveredFour}>
         <Island
           position={[-6, 0, 2 * Math.sqrt(3)]}
           tileset={experienceTiles}
-          propset={emptyProps /*experienceProps*/}
+          propset={experienceProps}
         />
         <HoverHtml
           position={[-6, 2, 2 * Math.sqrt(3)]}
@@ -240,7 +241,7 @@ function HoverSections({ isVisible, toggleAnimation }) {
         <Island
           position={[6, 0, -2 * Math.sqrt(3)]}
           tileset={tempIsland}
-          propset={emptyProps}
+          propset={linkedInProps}
         />
         <HoverHtml
           position={[6, 2, -2 * Math.sqrt(3)]}
