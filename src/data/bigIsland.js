@@ -26,9 +26,9 @@ const bigIsland = [
         rotation: [0, (0 * -Math.PI) / 3, 0]
     },
     {
-        model: 'hex_road_A',
+        model: 'hex_road_F',
         position: [-6, 0, 0],
-        rotation: [0, (3 * -Math.PI) / 3, 0]
+        rotation: [0, (0 * -Math.PI) / 3, 0]
     },
     {
         model: 'hex_road_A',
@@ -192,6 +192,16 @@ const bigIsland = [
     },
     {
         model: 'hex_grass',
+        position: [8, 0, 0],
+        rotation: [0, (3 * -Math.PI) / 3, 0]
+    },
+    {
+        model: 'hex_grass',
+        position: [6, 0, 0],
+        rotation: [0, (3 * -Math.PI) / 3, 0]
+    },
+    {
+        model: 'hex_grass',
         position: [-5, 0, 5 * Math.sqrt(3)],
         rotation: [0, (4 * -Math.PI) / 3, 0]
     },
@@ -210,70 +220,260 @@ const bigIsland = [
         position: [-5, 0, -5 * Math.sqrt(3)],
         rotation: [0, (4 * -Math.PI) / 3, 0]
     },
-    //face 1
     {
         model: 'hex_grass',
+        position: [4, 0, -4 * Math.sqrt(3)],
+        rotation: [0, (3 * -Math.PI) / 3, 0]
+    },
+    {
+        model: 'hex_grass',
+        position: [-4, 0, -4 * Math.sqrt(3)],
+        rotation: [0, (3 * -Math.PI) / 3, 0]
+    },
+    {
+        model: 'hex_grass',
+        position: [4, 0, 4 * Math.sqrt(3)],
+        rotation: [0, (3 * -Math.PI) / 3, 0]
+    },
+    {
+        model: 'hex_grass',
+        position: [-4, 0, 4 * Math.sqrt(3)],
+        rotation: [0, (3 * -Math.PI) / 3, 0]
+    },
+    {
+        model: 'hex_grass',
+        position: [-3, 0, 3 * Math.sqrt(3)],
+        rotation: [0, (3 * -Math.PI) / 3, 0]
+    },
+    {
+        model: 'hex_grass',
+        position: [3, 0, 3 * Math.sqrt(3)],
+        rotation: [0, (3 * -Math.PI) / 3, 0]
+    },
+    {
+        model: 'hex_grass',
+        position: [-3, 0, -3 * Math.sqrt(3)],
+        rotation: [0, (3 * -Math.PI) / 3, 0]
+    },
+    {
+        model: 'hex_grass',
+        position: [3, 0, -3 * Math.sqrt(3)],
+        rotation: [0, (3 * -Math.PI) / 3, 0]
+    },
+    //face 1
+    {
+        model: 'hex_coast_B_waterless',
         position: [4, 0, -6 * Math.sqrt(3)],
+        rotation: [0, (3 * -Math.PI) / 3, 0]
+    },
+    {
+        model: 'hex_coast_B_waterless',
+        position: [2, 0, -6 * Math.sqrt(3)],
+        rotation: [0, (3 * -Math.PI) / 3, 0]
+    },
+    {
+        model: 'hex_grass',
+        position: [3, 0, -5 * Math.sqrt(3)],
         rotation: [0, (4 * -Math.PI) / 3, 0]
     },
     {
         model: 'hex_grass',
-        position: [-4, 0, -6 * Math.sqrt(3)],
+        position: [-3, 0, -5 * Math.sqrt(3)],
         rotation: [0, (4 * -Math.PI) / 3, 0]
+    },
+    {
+        model: 'hex_coast_B_waterless',
+        position: [0, 0, -6 * Math.sqrt(3)],
+        rotation: [0, (3 * -Math.PI) / 3, 0]
+    },
+    {
+        model: 'hex_coast_B_waterless',
+        position: [-2, 0, -6 * Math.sqrt(3)],
+        rotation: [0, (3 * -Math.PI) / 3, 0]
+    },
+    {
+        model: 'hex_coast_B_waterless',
+        position: [-4, 0, -6 * Math.sqrt(3)],
+        rotation: [0, (3 * -Math.PI) / 3, 0]
     },
     //face 2
     {
-        model: 'hex_grass',
+        model: 'hex_coast_B_waterless',
         position: [4, 0, 6 * Math.sqrt(3)],
-        rotation: [0, (4 * -Math.PI) / 3, 0]
+        rotation: [0, (0 * -Math.PI) / 3, 0]
+    },
+    {
+        model: 'hex_coast_B_waterless',
+        position: [2, 0, 6 * Math.sqrt(3)],
+        rotation: [0, (0 * -Math.PI) / 3, 0]
     },
     {
         model: 'hex_grass',
-        position: [-4, 0, 6 * Math.sqrt(3)],
+        position: [3, 0, 5 * Math.sqrt(3)],
         rotation: [0, (4 * -Math.PI) / 3, 0]
+    },
+    {
+        model: 'hex_coast_B_waterless',
+        position: [0, 0, 6 * Math.sqrt(3)],
+        rotation: [0, (0 * -Math.PI) / 3, 0]
+    },
+    {
+        model: 'hex_grass',
+        position: [-3, 0, 5 * Math.sqrt(3)],
+        rotation: [0, (4 * -Math.PI) / 3, 0]
+    },
+    {
+        model: 'hex_coast_B_waterless',
+        position: [-2, 0, 6 * Math.sqrt(3)],
+        rotation: [0, (0 * -Math.PI) / 3, 0]
+    },
+    {
+        model: 'hex_coast_B_waterless',
+        position: [-4, 0, 6 * Math.sqrt(3)],
+        rotation: [0, (0 * -Math.PI) / 3, 0]
     },
 
     //face 3
     {
-        model: 'hex_grass',
+        model: 'hex_coast_B_waterless',
         position: [7, 0, 5 * Math.sqrt(3)],
+        rotation: [0, (5 * -Math.PI) / 3, 0]
+    },
+    {
+        model: 'hex_coast_B_waterless',
+        position: [8, 0, 4 * Math.sqrt(3)],
+        rotation: [0, (5 * -Math.PI) / 3, 0]
+    },
+    {
+        model: 'hex_coast_B_waterless',
+        position: [9, 0, 3 * Math.sqrt(3)],
+        rotation: [0, (5 * -Math.PI) / 3, 0]
+    },
+    {
+        model: 'hex_coast_B_waterless',
+        position: [10, 0, 2 * Math.sqrt(3)],
+        rotation: [0, (5 * -Math.PI) / 3, 0]
+    },
+    {
+        model: 'hex_grass',
+        position: [9, 0, 1 * Math.sqrt(3)],
         rotation: [0, (4 * -Math.PI) / 3, 0]
     },
     {
-        model: 'hex_coast_A_waterless',
+        model: 'hex_grass',
+        position: [6, 0, 4 * Math.sqrt(3)],
+        rotation: [0, (4 * -Math.PI) / 3, 0]
+    },
+    {
+        model: 'hex_coast_B_waterless',
         position: [11, 0, 1 * Math.sqrt(3)],
         rotation: [0, (5 * -Math.PI) / 3, 0]
     },
     //face 4
     {
-        model: 'hex_grass',
+        model: 'hex_coast_B_waterless',
         position: [-7, 0, 5 * Math.sqrt(3)],
-        rotation: [0, (4 * -Math.PI) / 3, 0]
+        rotation: [0, (1 * -Math.PI) / 3, 0]
     },
     {
         model: 'hex_grass',
-        position: [-11, 0, 1 * Math.sqrt(3)],
+        position: [-6, 0, 4 * Math.sqrt(3)],
         rotation: [0, (4 * -Math.PI) / 3, 0]
+    },
+    {
+        model: 'hex_coast_B_waterless',
+        position: [-8, 0, 4 * Math.sqrt(3)],
+        rotation: [0, (1 * -Math.PI) / 3, 0]
+    },
+    {
+        model: 'hex_coast_B_waterless',
+        position: [-9, 0, 3 * Math.sqrt(3)],
+        rotation: [0, (1 * -Math.PI) / 3, 0]
+    },
+    {
+        model: 'hex_coast_B_waterless',
+        position: [-10, 0, 2 * Math.sqrt(3)],
+        rotation: [0, (1 * -Math.PI) / 3, 0]
+    },
+    {
+        model: 'hex_grass',
+        position: [-9, 0, 1 * Math.sqrt(3)],
+        rotation: [0, (4 * -Math.PI) / 3, 0]
+    },
+    {
+        model: 'hex_coast_B_waterless',
+        position: [-11, 0, 1 * Math.sqrt(3)],
+        rotation: [0, (1 * -Math.PI) / 3, 0]
     },
     //face 5
     {
-        model: 'hex_grass',
+        model: 'hex_coast_B_waterless',
         position: [-7, 0, -5 * Math.sqrt(3)],
-        rotation: [0, (4 * -Math.PI) / 3, 0]
+        rotation: [0, (2 * -Math.PI) / 3, 0]
     },
     {
         model: 'hex_grass',
-        position: [-11, 0, -1 * Math.sqrt(3)],
+        position: [-6, 0, -4 * Math.sqrt(3)],
         rotation: [0, (4 * -Math.PI) / 3, 0]
+    },
+    {
+        model: 'hex_coast_B_waterless',
+        position: [-8, 0, -4 * Math.sqrt(3)],
+        rotation: [0, (2 * -Math.PI) / 3, 0]
+    },
+    {
+        model: 'hex_coast_B_waterless',
+        position: [-9, 0, -3 * Math.sqrt(3)],
+        rotation: [0, (2 * -Math.PI) / 3, 0]
+    },
+    {
+        model: 'hex_coast_B_waterless',
+        position: [-10, 0, -2 * Math.sqrt(3)],
+        rotation: [0, (2 * -Math.PI) / 3, 0]
+    },
+    {
+        model: 'hex_grass',
+        position: [-9, 0, -1 * Math.sqrt(3)],
+        rotation: [0, (4 * -Math.PI) / 3, 0]
+    },
+    {
+        model: 'hex_coast_B_waterless',
+        position: [-11, 0, -1 * Math.sqrt(3)],
+        rotation: [0, (2 * -Math.PI) / 3, 0]
     },
     //face 6
     {
-        model: 'hex_grass',
+        model: 'hex_coast_B_waterless',
         position: [7, 0, -5 * Math.sqrt(3)],
         rotation: [0, (4 * -Math.PI) / 3, 0]
     },
     {
-        model: 'hex_coast_C_waterless',
+        model: 'hex_coast_B_waterless',
+        position: [8, 0, -4 * Math.sqrt(3)],
+        rotation: [0, (4 * -Math.PI) / 3, 0]
+    },
+    {
+        model: 'hex_coast_B_waterless',
+        position: [9, 0, -3 * Math.sqrt(3)],
+        rotation: [0, (4 * -Math.PI) / 3, 0]
+    },
+    {
+        model: 'hex_grass',
+        position: [6, 0, -4 * Math.sqrt(3)],
+        rotation: [0, (4 * -Math.PI) / 3, 0]
+    },
+    {
+        model: 'hex_coast_B_waterless',
+        position: [10, 0, -2 * Math.sqrt(3)],
+        rotation: [0, (4 * -Math.PI) / 3, 0]
+    },
+    {
+        model: 'hex_grass',
+        position: [9, 0, -1 * Math.sqrt(3)],
+        rotation: [0, (4 * -Math.PI) / 3, 0]
+    },
+    {
+        model: 'hex_coast_B_waterless',
         position: [11, 0, -1 * Math.sqrt(3)],
         rotation: [0, (4 * -Math.PI) / 3, 0]
     },

@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 
 function Home() {
   //date for api call
-  const restPath = "http://localhost/portfolio/wp-json/wp/v2/pages/40";
+  const restPath = "https://lukerushton.com/IDlljioTsC/wp-json/wp/v2/pages/40";
   const [restData, setData] = useState([]);
   const [isLoaded, setLoadStatus] = useState(false);
 

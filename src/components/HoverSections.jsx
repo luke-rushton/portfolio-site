@@ -240,7 +240,7 @@ function HoverSections({ isVisible, toggleAnimation, cameraRef }) {
       <Island
         position={[0, 0, 0]}
         tileset={bigIsland}
-        propset={emptyProps /*bigIslandProps*/}
+        propset={bigIslandProps}
       />
 
       <Select enabled={hoveredFour || isClosest[3]}>
@@ -285,7 +285,7 @@ function HoverSections({ isVisible, toggleAnimation, cameraRef }) {
       <Select enabled={hoveredThree || isClosest[2]}>
         <Island
           position={[6, 0, -2 * Math.sqrt(3)]}
-          tileset={tempIsland}
+          tileset={linkedInTiles}
           propset={emptyProps /*linkedInProps*/}
         />
         <HoverHtml
