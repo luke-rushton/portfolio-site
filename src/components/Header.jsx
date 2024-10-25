@@ -41,17 +41,17 @@ function Header({ open, toggleAnimation }) {
           </NavLink>
         </li>
         <li>
-          <a href="https://www.linkedin.com/in/luke-rushton/">
+          <a href="https://www.linkedin.com/in/luke-rushton/" target="_blank">
             <img src="/linkedin.svg" alt="LinkedIn Logo" />
           </a>
         </li>
         <li>
-          <a href="https://github.com/luke-rushton">
+          <a href="https://github.com/luke-rushton" target="_blank">
             <img src="/github_white.svg" alt="Github Logo" />
           </a>
         </li>
         <li>
-          <a href="mailto:luke.rushtonx@gmail.com">
+          <a href="mailto:luke.rushtonx@gmail.com" target="_blank">
             <img src="/gmail.svg" alt="Gmail Logo" />
           </a>
         </li>

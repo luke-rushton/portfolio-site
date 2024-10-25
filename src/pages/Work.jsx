@@ -12,7 +12,9 @@ function Work() {
 
   //date for api call
   const restPath =
-    "http://localhost/portfolio/wp-json/wp/v2/portfolio_work/" + id + "?_embed";
+    "https://lukerushton.com/IDlljioTsC/wp-json/wp/v2/portfolio_work/" +
+    id +
+    "?_embed";
   const [restData, setData] = useState([]);
   const [isLoaded, setLoadStatus] = useState(false);
 

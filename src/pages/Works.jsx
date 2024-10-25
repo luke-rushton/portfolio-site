@@ -6,7 +6,7 @@ import ContentPlaceholder from "../components/ContentPlaceholder";
 
 function Works() {
   const restPath =
-    "http://localhost/portfolio/wp-json/wp/v2/portfolio_work?_embed";
+    "https://lukerushton.com/IDlljioTsC/wp-json/wp/v2/portfolio_work?_embed";
   const [restData, setData] = useState([]);
   const [isLoaded, setLoadStatus] = useState(false);
 
