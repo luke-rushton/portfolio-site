@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { Html, Text } from "@react-three/drei";
 import {
   EffectComposer,
@@ -26,8 +26,9 @@ import linkedInTiles from "../data/linkedInTiles";
 import HoverHtml from "./HoverHtml";
 
 import Island from "./Island";
+import { useFrame } from "@react-three/fiber";
 
-function HoverSections({ isVisible, toggleAnimation }) {
+function HoverSections({ isVisible, toggleAnimation, cameraRef }) {
   //hover effect state
   const [hoveredOne, hoverOne] = useState(null);
   const [hoveredTwo, hoverTwo] = useState(null);
@@ -35,6 +36,24 @@ function HoverSections({ isVisible, toggleAnimation }) {
   const [hoveredFour, hoverFour] = useState(null);
   const [hoveredFive, hoverFive] = useState(null);
   const [hoveredSix, hoverSix] = useState(null);
+
+  const refOne = useRef(); //-1.5708
+  const refTwo = useRef(); //0.545805
+  const refThree = useRef(); //-0.5236
+  const refFour = useRef(); //2.61799
+  const refFive = useRef(); //-2.618
+  const refSix = useRef(); //1.5708
+
+  //closest selection
+  const closest = true;
+  const [isClosest, setIsClosest] = useState([
+    false,
+    false,
+    true,
+    false,
+    false,
+    false,
+  ]);
 
   //navigation
   const navigate = useNavigate();
@@ -45,6 +64,25 @@ function HoverSections({ isVisible, toggleAnimation }) {
     document.body.style.cursor = mouseHover ? "pointer" : "auto";
   }, [mouseHover]);
 
+  //console.log(cameraRef.current.getAzimuthalAngle());
+  useFrame(() => {
+    let angle = cameraRef.current.getAzimuthalAngle() + 0.785398;
+    if (angle >= 0 && angle < 1.0472) {
+      setIsClosest([false, false, false, false, false, true]);
+    } else if (angle >= 1.0472 && angle < 2.0944) {
+      setIsClosest([false, true, false, false, false, false]);
+    } else if (angle >= 2.0944 && angle < 3.14159) {
+      setIsClosest([false, false, true, false, false, false]);
+    } else if (angle >= -3.14159 && angle < -2.0944) {
+      setIsClosest([true, false, false, false, false, false]);
+    } else if (angle >= -2.0944 && angle < -1.0472) {
+      setIsClosest([false, false, false, false, true, false]);
+    } else if (angle >= -1.0472 && angle < 0) {
+      setIsClosest([false, false, false, true, false, false]);
+    } else {
+      setIsClosest([false, false, false, false, false, false]);
+    }
+  });
   return (
     <Selection>
       {/*outline effect */}
@@ -61,7 +99,8 @@ function HoverSections({ isVisible, toggleAnimation }) {
       {/* hitbox spheres for outline ffect */}
 
       <mesh
-        position={[-0, 0, -4 * Math.sqrt(3)]}
+        ref={refOne}
+        position={[0, 0, -4 * Math.sqrt(3)]}
         onPointerEnter={(e) => {
           e.stopPropagation();
           hoverOne(true);
@@ -82,6 +121,7 @@ function HoverSections({ isVisible, toggleAnimation }) {
       </mesh>
 
       <mesh
+        ref={refTwo}
         position={[6, 0, 2 * Math.sqrt(3)]}
         onPointerEnter={(e) => {
           e.stopPropagation();
@@ -105,6 +145,7 @@ function HoverSections({ isVisible, toggleAnimation }) {
       </mesh>
 
       <mesh
+        ref={refThree}
         position={[6, 0, -2 * Math.sqrt(3)]}
         onPointerEnter={(e) => {
           e.stopPropagation();
@@ -126,6 +167,7 @@ function HoverSections({ isVisible, toggleAnimation }) {
       </mesh>
 
       <mesh
+        ref={refFour}
         position={[-6, 0, 2 * Math.sqrt(3)]}
         onPointerEnter={(e) => {
           e.stopPropagation();
@@ -149,6 +191,7 @@ function HoverSections({ isVisible, toggleAnimation }) {
       </mesh>
 
       <mesh
+        ref={refFive}
         position={[-6, 0, -2 * Math.sqrt(3)]}
         onPointerEnter={(e) => {
           e.stopPropagation();
@@ -170,6 +213,7 @@ function HoverSections({ isVisible, toggleAnimation }) {
       </mesh>
 
       <mesh
+        ref={refSix}
         position={[0, 0, 4 * Math.sqrt(3)]}
         onPointerEnter={(e) => {
           e.stopPropagation();
@@ -199,7 +243,7 @@ function HoverSections({ isVisible, toggleAnimation }) {
         propset={emptyProps /*bigIslandProps*/}
       />
 
-      <Select enabled={hoveredFour}>
+      <Select enabled={hoveredFour || isClosest[3]}>
         <Island
           position={[-6, 0, 2 * Math.sqrt(3)]}
           tileset={experienceTiles}
@@ -207,12 +251,12 @@ function HoverSections({ isVisible, toggleAnimation }) {
         />
         <HoverHtml
           position={[-6, 2, 2 * Math.sqrt(3)]}
-          visible={hoveredFour}
+          visible={hoveredFour || isClosest[3]}
           title="Experience"
         />
       </Select>
 
-      <Select enabled={hoveredSix}>
+      <Select enabled={hoveredSix || isClosest[5]}>
         <Island
           position={[0, 0, 4 * Math.sqrt(3)]}
           tileset={tempIsland}
@@ -220,12 +264,12 @@ function HoverSections({ isVisible, toggleAnimation }) {
         />
         <HoverHtml
           position={[0, 2, 4 * Math.sqrt(3)]}
-          visible={hoveredSix}
+          visible={hoveredSix || isClosest[5]}
           title="Works"
         />
       </Select>
 
-      <Select enabled={hoveredTwo}>
+      <Select enabled={hoveredTwo || isClosest[1]}>
         <Island
           position={[6, 0, 2 * Math.sqrt(3)]}
           tileset={tempIsland}
@@ -233,12 +277,12 @@ function HoverSections({ isVisible, toggleAnimation }) {
         />
         <HoverHtml
           position={[6, 2, 2 * Math.sqrt(3)]}
-          visible={hoveredTwo}
+          visible={hoveredTwo || isClosest[1]}
           title="About"
         />
       </Select>
 
-      <Select enabled={hoveredThree}>
+      <Select enabled={hoveredThree || isClosest[2]}>
         <Island
           position={[6, 0, -2 * Math.sqrt(3)]}
           tileset={linkedInTiles}
@@ -246,12 +290,12 @@ function HoverSections({ isVisible, toggleAnimation }) {
         />
         <HoverHtml
           position={[6, 2, -2 * Math.sqrt(3)]}
-          visible={hoveredThree}
+          visible={hoveredThree || isClosest[2]}
           title="LinkedIn"
         />
       </Select>
 
-      <Select enabled={hoveredOne}>
+      <Select enabled={hoveredOne || isClosest[0]}>
         <Island
           position={[0, 0, -4 * Math.sqrt(3)]}
           tileset={tempIsland}
@@ -259,12 +303,12 @@ function HoverSections({ isVisible, toggleAnimation }) {
         />
         <HoverHtml
           position={[0, 2, -4 * Math.sqrt(3)]}
-          visible={hoveredOne}
+          visible={hoveredOne || isClosest[0]}
           title="Github"
         />
       </Select>
 
-      <Select enabled={hoveredFive}>
+      <Select enabled={hoveredFive || isClosest[4]}>
         <Island
           position={[-6, 0, -2 * Math.sqrt(3)]}
           tileset={tempIsland}
@@ -272,7 +316,7 @@ function HoverSections({ isVisible, toggleAnimation }) {
         />
         <HoverHtml
           position={[-6, 2, -2 * Math.sqrt(3)]}
-          visible={hoveredFive}
+          visible={hoveredFive || isClosest[4]}
           title="Email"
         />
       </Select>
