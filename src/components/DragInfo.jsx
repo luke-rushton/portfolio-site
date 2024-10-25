@@ -4,8 +4,8 @@ import { useSpring, animated, easings } from "react-spring";
 function DragInfo() {
   //swipe gesture animation
   const swiper = useSpring({
-    from: { left: "0%" },
-    to: [{ left: "70%" }, { left: "0%" }],
+    from: { left: "10%" },
+    to: [{ left: "70%" }, { left: "10%" }],
     loop: true,
     config: {
       friction: 40,
@@ -14,10 +14,10 @@ function DragInfo() {
 
   //disappear on click
   useEffect(() => {
-    document.body.addEventListener("click", () => {
+    document.body.addEventListener("mousedown", () => {
       document.getElementById("drag-info-component").style.opacity = 0;
     });
-    document.body.addEventListener("touchmove", () => {
+    document.body.addEventListener("touchstart", () => {
       document.getElementById("drag-info-component").style.opacity = 0;
     });
   }, []);

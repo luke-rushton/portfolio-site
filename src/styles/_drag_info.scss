@@ -1,25 +1,28 @@
 @import "global_brand";
 .drag-info {
   position: fixed;
-  top: 33%;
+  top: 20%;
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 998;
   width: 15rem;
-  height: 20rem;
+  height: 7rem;
   transition: 0.25s;
   pointer-events: none;
+  background-color: $background;
+  border-radius: $radius-medium;
+  box-shadow: $brand-drop-shadow;
 
   img {
     position: absolute;
     width: 2.5rem;
     height: auto;
-    top: 25%;
+    top: 1rem;
     box-shadow: none;
   }
   p {
-    position: absolute;
-    top: 35%;
-    font-size: 2rem;
+    margin-top: 4rem;
+    text-align: center;
+    font-size: 1.5rem;
   }
 }

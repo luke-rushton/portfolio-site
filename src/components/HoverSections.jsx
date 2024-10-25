@@ -77,7 +77,7 @@ function HoverSections({ isVisible, toggleAnimation, cameraRef }) {
       setIsClosest([true, false, false, false, false, false]);
     } else if (angle >= -2.0944 && angle < -1.0472) {
       setIsClosest([false, false, false, false, true, false]);
-    } else if (angle >= -1.0472 && angle < 0) {
+    } else if (angle >= -0.785 && angle < 0) {
       setIsClosest([false, false, false, true, false, false]);
     } else {
       setIsClosest([false, false, false, false, false, false]);
