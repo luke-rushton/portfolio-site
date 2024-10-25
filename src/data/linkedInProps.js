@@ -16,12 +16,12 @@ const linkedInProps = [
     },
     {
         model: 'crate_open',
-        position: [2, 0, 0],
+        position: [2.4, 0, 0],
         rotation: [0, (4 * -Math.PI) / 3, 0]
     },
     {
         model: 'crate_long_C',
-        position: [1.8, 0, 0.3],
+        position: [2.2, 0, 0.3],
         rotation: [0, (3 * -Math.PI) / 3, 0]
     },
     {
@@ -61,7 +61,7 @@ const linkedInProps = [
     },
     {
         model: 'unit_red_accent',
-        position: [1.6, 0, 0],
+        position: [2, 0, 0],
         rotation: [0, (2 * -Math.PI) / 3, 0]
     },
     {

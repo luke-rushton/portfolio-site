@@ -20,6 +20,7 @@ import bigIslandProps from "../data/bigIslandProps";
 import experienceProps from "../data/experienceProps";
 import experienceTiles from "../data/experienceTiles";
 import linkedInProps from "../data/linkedInProps";
+import linkedInTiles from "../data/linkedInTiles";
 
 //hover text
 import HoverHtml from "./HoverHtml";
@@ -195,14 +196,14 @@ function HoverSections({ isVisible, toggleAnimation }) {
       <Island
         position={[0, 0, 0]}
         tileset={bigIsland}
-        propset={bigIslandProps}
+        propset={emptyProps /*bigIslandProps*/}
       />
 
       <Select enabled={hoveredFour}>
         <Island
           position={[-6, 0, 2 * Math.sqrt(3)]}
           tileset={experienceTiles}
-          propset={experienceProps}
+          propset={emptyProps /*experienceProps*/}
         />
         <HoverHtml
           position={[-6, 2, 2 * Math.sqrt(3)]}
@@ -240,8 +241,8 @@ function HoverSections({ isVisible, toggleAnimation }) {
       <Select enabled={hoveredThree}>
         <Island
           position={[6, 0, -2 * Math.sqrt(3)]}
-          tileset={tempIsland}
-          propset={linkedInProps}
+          tileset={linkedInTiles}
+          propset={emptyProps /*linkedInProps*/}
         />
         <HoverHtml
           position={[6, 2, -2 * Math.sqrt(3)]}
