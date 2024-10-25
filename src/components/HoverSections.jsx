@@ -285,7 +285,7 @@ function HoverSections({ isVisible, toggleAnimation, cameraRef }) {
       <Select enabled={hoveredThree || isClosest[2]}>
         <Island
           position={[6, 0, -2 * Math.sqrt(3)]}
-          tileset={linkedInTiles}
+          tileset={tempIsland}
           propset={emptyProps /*linkedInProps*/}
         />
         <HoverHtml

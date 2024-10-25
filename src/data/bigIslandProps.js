@@ -100,6 +100,78 @@ const bigIslandProps = [
         position: [-12, 0, 0],
         rotation: [0, (3 * -Math.PI) / 3, 0]
     },
+
+    //other trees
+    {
+        model: 'hills_A_trees',
+        position: [4, 0, 0],
+        rotation: [0, (4 * -Math.PI) / 3, 0]
+    },
+    {
+        model: 'trees_A_medium',
+        position: [6, 0, 0],
+        rotation: [0, (5 * -Math.PI) / 3, 0]
+    },
+    {
+        model: 'trees_A_medium',
+        position: [8, 0, 0],
+        rotation: [0, (3 * -Math.PI) / 3, 0]
+    },
+    {
+        model: 'trees_A_small',
+        position: [10, 0, 0],
+        rotation: [0, (2 * -Math.PI) / 3, 0]
+    },
+    {
+        model: 'trees_A_small',
+        position: [2.2, 1, 0],
+        rotation: [0, (2 * -Math.PI) / 3, 0]
+    },
+    {
+        model: 'trees_A_medium',
+        position: [3, 0.5, Math.sqrt(3)],
+        rotation: [0, (2 * -Math.PI) / 3, 0]
+    },
+    {
+        model: 'hills_C_trees',
+        position: [3, 0.5, -Math.sqrt(3)],
+        rotation: [0, (2 * -Math.PI) / 3, 0]
+    },
+    {
+        model: 'hills_C_trees',
+        position: [2, 0, 2 * Math.sqrt(3)],
+        rotation: [0, (3 * -Math.PI) / 3, 0]
+    },
+    {
+        model: 'hills_C_trees',
+        position: [-2, 0, 2 * Math.sqrt(3)],
+        rotation: [0, (5 * -Math.PI) / 3, 0]
+    },
+    {
+        model: 'trees_A_medium',
+        position: [0, 0.5, 2 * Math.sqrt(3)],
+        rotation: [0, (5 * -Math.PI) / 3, 0]
+    },
+    {
+        model: 'trees_A_medium',
+        position: [1, 1, 1.1 * Math.sqrt(3)],
+        rotation: [0, (3 * -Math.PI) / 3, 0]
+    },
+    {
+        model: 'hills_C_trees',
+        position: [2, 0, -2 * Math.sqrt(3)],
+        rotation: [0, (1 * -Math.PI) / 3, 0]
+    },
+    {
+        model: 'trees_A_large',
+        position: [0, 0.5, -2 * Math.sqrt(3)],
+        rotation: [0, (1 * -Math.PI) / 3, 0]
+    },
+    {
+        model: 'trees_A_small',
+        position: [1.2, 1, -1.1 * Math.sqrt(3)],
+        rotation: [0, (1 * -Math.PI) / 3, 0]
+    },
 ];
 
 export default bigIslandProps;
