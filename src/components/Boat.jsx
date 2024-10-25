@@ -5,23 +5,25 @@ import * as THREE from "three";
 import { OrbitControls } from "@react-three/drei";
 import { useGLTF } from "@react-three/drei";
 
-function Boat() {
-  const ref = useRef();
+function Boat({ cameraRef }) {
+  //const ref = useRef();
+  //cameraRef = ref;
   const boatRef = useRef();
   const { nodes, materials } = useGLTF("/ship_red_accent.gltf");
 
   useFrame(() => {
-    let x = Math.sin(ref.current.getAzimuthalAngle()) * 14;
-    let z = Math.cos(ref.current.getAzimuthalAngle()) * 14;
+    let x = Math.sin(cameraRef.current.getAzimuthalAngle()) * 14;
+    let z = Math.cos(cameraRef.current.getAzimuthalAngle()) * 14;
     //improve this with maath easing
     boatRef.current.position.x = x;
     boatRef.current.position.z = z;
-    boatRef.current.rotation.y = Math.PI / 2 + ref.current.getAzimuthalAngle();
+    boatRef.current.rotation.y =
+      Math.PI / 2 + cameraRef.current.getAzimuthalAngle();
   });
   return (
     <>
       <OrbitControls
-        ref={ref}
+        ref={cameraRef}
         /*enablePan={false}
         maxDistance={20}
         minDistance={17}

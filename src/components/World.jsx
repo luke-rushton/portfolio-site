@@ -26,6 +26,9 @@ function World() {
   //navigation
   const navigate = useNavigate();
 
+  //closet to camera
+  const cameraRef = useRef();
+
   //track what page we want to load based on clicked island
 
   return (
@@ -46,10 +49,10 @@ function World() {
         open={() => isVisible("visible")}
         toggleAnimation={() => toggle(true)}
       />
-      <Canvas camera={{ position: [-20, 4, 0] }}>
+      <Canvas frameloop="demand" camera={{ position: [-20, 4, 0] }}>
         <ambientLight intensity={Math.PI / 2} />
         {/* boat */}
-        <Boat />
+        <Boat cameraRef={cameraRef} />
         {/* lighting */}
         <spotLight
           decay={0.25}
@@ -71,6 +74,7 @@ function World() {
         <HoverSections
           isVisible={isVisible}
           toggleAnimation={() => toggle(true)}
+          cameraRef={cameraRef}
         />
       </Canvas>
       {/* </Suspense> */}
