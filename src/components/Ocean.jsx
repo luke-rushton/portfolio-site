@@ -54,7 +54,7 @@ function Ocean() {
         normalMap={normal}
         roughnessMap={rough}
       />
-      <shaderMaterial fragmentShader={fragmentShader} />
+      {/* <shaderMaterial fragmentShader={fragmentShader} /> */}
     </mesh>
   );
 }

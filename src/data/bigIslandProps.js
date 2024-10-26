@@ -65,7 +65,7 @@ const bigIslandProps = [
     },
     {
         model: 'tree_single_A',
-        position: [-6, 0, 0.5],
+        position: [-6.3, 0, 0.5],
         rotation: [0, (4 * -Math.PI) / 3, 0]
     },
     {
@@ -148,8 +148,8 @@ const bigIslandProps = [
         rotation: [0, (5 * -Math.PI) / 3, 0]
     },
     {
-        model: 'trees_A_medium',
-        position: [0, 0.5, 2 * Math.sqrt(3)],
+        model: 'mountain_C',
+        position: [0, 0, 2 * Math.sqrt(3)],
         rotation: [0, (5 * -Math.PI) / 3, 0]
     },
     {
@@ -171,6 +171,116 @@ const bigIslandProps = [
         model: 'trees_A_small',
         position: [1.2, 1, -1.1 * Math.sqrt(3)],
         rotation: [0, (1 * -Math.PI) / 3, 0]
+    },
+    {
+        model: 'trees_A_medium',
+        position: [3, 0, 3 * Math.sqrt(3)],
+        rotation: [0, (3 * -Math.PI) / 3, 0]
+    },
+    {
+        model: 'trees_A_medium',
+        position: [4, 0, 4 * Math.sqrt(3)],
+        rotation: [0, (4 * -Math.PI) / 3, 0]
+    },
+    {
+        model: 'trees_A_medium',
+        position: [3, 0, 5 * Math.sqrt(3)],
+        rotation: [0, (4 * -Math.PI) / 3, 0]
+    },
+    {
+        model: 'trees_A_medium',
+        position: [-3, 0, 5 * Math.sqrt(3)],
+        rotation: [0, (4 * -Math.PI) / 3, 0]
+    },
+    {
+        model: 'trees_A_medium',
+        position: [5, 0, 5 * Math.sqrt(3)],
+        rotation: [0, (5 * -Math.PI) / 3, 0]
+    },
+    {
+        model: 'trees_A_medium',
+        position: [-3, 0, 3 * Math.sqrt(3)],
+        rotation: [0, (3 * -Math.PI) / 3, 0]
+    },
+    {
+        model: 'trees_A_medium',
+        position: [-4, 0, 4 * Math.sqrt(3)],
+        rotation: [0, (4 * -Math.PI) / 3, 0]
+    },
+    {
+        model: 'trees_A_medium',
+        position: [-5, 0, 5 * Math.sqrt(3)],
+        rotation: [0, (5 * -Math.PI) / 3, 0]
+    },
+    {
+        model: 'trees_A_medium',
+        position: [-3, 0, -3 * Math.sqrt(3)],
+        rotation: [0, (3 * -Math.PI) / 3, 0]
+    },
+    {
+        model: 'trees_A_medium',
+        position: [-4, 0, -4 * Math.sqrt(3)],
+        rotation: [0, (4 * -Math.PI) / 3, 0]
+    },
+    {
+        model: 'trees_A_medium',
+        position: [-5, 0, -5 * Math.sqrt(3)],
+        rotation: [0, (5 * -Math.PI) / 3, 0]
+    },
+    {
+        model: 'trees_A_medium',
+        position: [3, 0, -5 * Math.sqrt(3)],
+        rotation: [0, (3 * -Math.PI) / 3, 0]
+    },
+    {
+        model: 'hills_B_trees',
+        position: [-3.3, 0, -4.8 * Math.sqrt(3)],
+        rotation: [0, (1.7 * -Math.PI) / 3, 0]
+    },
+    {
+        model: 'tree_single_A',
+        position: [3.6, 0, -3 * Math.sqrt(3)],
+        rotation: [0, (3 * -Math.PI) / 3, 0]
+    },
+    {
+        model: 'tree_single_A',
+        position: [3.3, 0, -3.4 * Math.sqrt(3)],
+        rotation: [0, (4 * -Math.PI) / 3, 0]
+    },
+    {
+        model: 'tree_single_A',
+        position: [2.7, 0, -3.4 * Math.sqrt(3)],
+        rotation: [0, (5 * -Math.PI) / 3, 0]
+    },
+    {
+        model: 'trees_A_medium',
+        position: [4, 0, -4 * Math.sqrt(3)],
+        rotation: [0, (4 * -Math.PI) / 3, 0]
+    },
+    {
+        model: 'trees_A_medium',
+        position: [5, 0, -5 * Math.sqrt(3)],
+        rotation: [0, (5 * -Math.PI) / 3, 0]
+    },
+    {
+        model: 'trees_A_medium',
+        position: [-9, 0, 1 * Math.sqrt(3)],
+        rotation: [0, (5 * -Math.PI) / 3, 0]
+    },
+    {
+        model: 'trees_A_large',
+        position: [6, 0, 4 * Math.sqrt(3)],
+        rotation: [0, (5 * -Math.PI) / 3, 0]
+    },
+    {
+        model: 'trees_A_large',
+        position: [9, 0, 1 * Math.sqrt(3)],
+        rotation: [0, (2 * -Math.PI) / 3, 0]
+    },
+    {
+        model: 'building_tower_A_red',
+        position: [9, 0, 3 * Math.sqrt(3)],
+        rotation: [0, (2 * -Math.PI) / 3, 0]
     },
 ];
 

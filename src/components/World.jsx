@@ -29,8 +29,6 @@ function World() {
   //closet to camera
   const cameraRef = useRef();
 
-  //track what page we want to load based on clicked island
-
   return (
     <div className="world">
       <PopupPage
@@ -44,12 +42,14 @@ function World() {
       />
       <Loading />
       <DragInfo />
-      {/* <Suspense fallback={<Loading />}> */}
       <Header
         open={() => isVisible("visible")}
         toggleAnimation={() => toggle(true)}
       />
-      <Canvas frameloop="demand" camera={{ position: [-20, 4, 0] }}>
+      <Canvas
+        frameloop="demand"
+        camera={{ near: 0.1, far: 300, position: [-20, 4, 0] }}
+      >
         <ambientLight intensity={Math.PI / 2} />
         {/* boat */}
         <Boat cameraRef={cameraRef} />
@@ -70,7 +70,7 @@ function World() {
         />
         {/* ocean */}
         <Ocean />
-        {/*<Sky elevation={0} turbidity={0.01} /> */}
+        <Sky elevation={0} turbidity={0.01} />
         <HoverSections
           isVisible={isVisible}
           toggleAnimation={() => toggle(true)}

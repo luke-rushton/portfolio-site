@@ -34,7 +34,7 @@ function Experience() {
   return (
     <>
       {isLoaded ? (
-        <animated.div className="experience-page page-content" style={fadeIn}>
+        <animated.main className="experience-page page-content" style={fadeIn}>
           {/* title */}
           <h1>{restData.title.rendered}</h1>
 
@@ -43,7 +43,7 @@ function Experience() {
             className="work-wp-content"
             dangerouslySetInnerHTML={{ __html: restData.content.rendered }}
           ></div>
-        </animated.div>
+        </animated.main>
       ) : (
         <ContentPlaceholder />
       )}
