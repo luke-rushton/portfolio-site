@@ -17,10 +17,18 @@ import tempIsland from "../data/tempIsland";
 import emptyProps from "../data/emptyProps";
 import bigIsland from "../data/bigIsland";
 import bigIslandProps from "../data/bigIslandProps";
-import experienceProps from "../data/experienceProps";
 import experienceTiles from "../data/experienceTiles";
-import linkedInProps from "../data/linkedInProps";
+import experienceProps from "../data/experienceProps";
 import linkedInTiles from "../data/linkedInTiles";
+import linkedInProps from "../data/linkedInProps";
+import githubTiles from "../data/githubTiles";
+import githubProps from "../data/githubProps";
+import emailTiles from "../data/emailTiles";
+import emailProps from "../data/emailProps";
+import aboutTiles from "../data/aboutTiles";
+import aboutProps from "../data/aboutProps";
+import worksTiles from "../data/worksTiles";
+import worksProps from "../data/worksProps";
 
 //hover text
 import HoverHtml from "./HoverHtml";
@@ -37,15 +45,7 @@ function HoverSections({ isVisible, toggleAnimation, cameraRef }) {
   const [hoveredFive, hoverFive] = useState(null);
   const [hoveredSix, hoverSix] = useState(null);
 
-  const refOne = useRef(); //-1.5708
-  const refTwo = useRef(); //0.545805
-  const refThree = useRef(); //-0.5236
-  const refFour = useRef(); //2.61799
-  const refFive = useRef(); //-2.618
-  const refSix = useRef(); //1.5708
-
   //closest selection
-  const closest = true;
   const [isClosest, setIsClosest] = useState([
     false,
     false,
@@ -99,7 +99,6 @@ function HoverSections({ isVisible, toggleAnimation, cameraRef }) {
       {/* hitbox spheres for outline ffect */}
 
       <mesh
-        ref={refOne}
         position={[0, 0, -4 * Math.sqrt(3)]}
         onPointerEnter={(e) => {
           e.stopPropagation();
@@ -121,7 +120,6 @@ function HoverSections({ isVisible, toggleAnimation, cameraRef }) {
       </mesh>
 
       <mesh
-        ref={refTwo}
         position={[6, 0, 2 * Math.sqrt(3)]}
         onPointerEnter={(e) => {
           e.stopPropagation();
@@ -145,7 +143,6 @@ function HoverSections({ isVisible, toggleAnimation, cameraRef }) {
       </mesh>
 
       <mesh
-        ref={refThree}
         position={[6, 0, -2 * Math.sqrt(3)]}
         onPointerEnter={(e) => {
           e.stopPropagation();
@@ -167,7 +164,6 @@ function HoverSections({ isVisible, toggleAnimation, cameraRef }) {
       </mesh>
 
       <mesh
-        ref={refFour}
         position={[-6, 0, 2 * Math.sqrt(3)]}
         onPointerEnter={(e) => {
           e.stopPropagation();
@@ -191,7 +187,6 @@ function HoverSections({ isVisible, toggleAnimation, cameraRef }) {
       </mesh>
 
       <mesh
-        ref={refFive}
         position={[-6, 0, -2 * Math.sqrt(3)]}
         onPointerEnter={(e) => {
           e.stopPropagation();
@@ -213,7 +208,6 @@ function HoverSections({ isVisible, toggleAnimation, cameraRef }) {
       </mesh>
 
       <mesh
-        ref={refSix}
         position={[0, 0, 4 * Math.sqrt(3)]}
         onPointerEnter={(e) => {
           e.stopPropagation();
@@ -240,14 +234,14 @@ function HoverSections({ isVisible, toggleAnimation, cameraRef }) {
       <Island
         position={[0, 0, 0]}
         tileset={bigIsland}
-        propset={emptyProps /*bigIslandProps*/}
+        propset={bigIslandProps}
       />
 
       <Select enabled={hoveredFour || isClosest[3]}>
         <Island
           position={[-6, 0, 2 * Math.sqrt(3)]}
           tileset={experienceTiles}
-          propset={emptyProps /*experienceProps*/}
+          propset={experienceProps}
         />
         <HoverHtml
           position={[-6, 2, 2 * Math.sqrt(3)]}
@@ -259,8 +253,8 @@ function HoverSections({ isVisible, toggleAnimation, cameraRef }) {
       <Select enabled={hoveredSix || isClosest[5]}>
         <Island
           position={[0, 0, 4 * Math.sqrt(3)]}
-          tileset={tempIsland}
-          propset={emptyProps}
+          tileset={worksTiles}
+          propset={worksProps}
         />
         <HoverHtml
           position={[0, 2, 4 * Math.sqrt(3)]}
@@ -272,8 +266,8 @@ function HoverSections({ isVisible, toggleAnimation, cameraRef }) {
       <Select enabled={hoveredTwo || isClosest[1]}>
         <Island
           position={[6, 0, 2 * Math.sqrt(3)]}
-          tileset={tempIsland}
-          propset={emptyProps}
+          tileset={aboutTiles}
+          propset={aboutProps}
         />
         <HoverHtml
           position={[6, 2, 2 * Math.sqrt(3)]}
@@ -285,8 +279,8 @@ function HoverSections({ isVisible, toggleAnimation, cameraRef }) {
       <Select enabled={hoveredThree || isClosest[2]}>
         <Island
           position={[6, 0, -2 * Math.sqrt(3)]}
-          tileset={tempIsland}
-          propset={emptyProps /*linkedInProps*/}
+          tileset={linkedInTiles}
+          propset={linkedInProps}
         />
         <HoverHtml
           position={[6, 2, -2 * Math.sqrt(3)]}
@@ -298,8 +292,8 @@ function HoverSections({ isVisible, toggleAnimation, cameraRef }) {
       <Select enabled={hoveredOne || isClosest[0]}>
         <Island
           position={[0, 0, -4 * Math.sqrt(3)]}
-          tileset={tempIsland}
-          propset={emptyProps}
+          tileset={githubTiles}
+          propset={githubProps}
         />
         <HoverHtml
           position={[0, 2, -4 * Math.sqrt(3)]}
@@ -311,8 +305,8 @@ function HoverSections({ isVisible, toggleAnimation, cameraRef }) {
       <Select enabled={hoveredFive || isClosest[4]}>
         <Island
           position={[-6, 0, -2 * Math.sqrt(3)]}
-          tileset={tempIsland}
-          propset={emptyProps}
+          tileset={emailTiles}
+          propset={emailProps}
         />
         <HoverHtml
           position={[-6, 2, -2 * Math.sqrt(3)]}

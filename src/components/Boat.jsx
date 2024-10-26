@@ -24,17 +24,17 @@ function Boat({ cameraRef }) {
     <>
       <OrbitControls
         ref={cameraRef}
-        /*enablePan={false}
+        enablePan={false}
         maxDistance={20}
         minDistance={17}
         maxPolarAngle={Math.PI / 2.05}
         minPolarAngle={Math.PI / 2.2}
-        rotateSpeed={0.2} */
+        rotateSpeed={0.2}
       />
       <mesh
         ref={boatRef}
         position={[14, -0.25, 0]}
-        scale={0.5}
+        scale={0.75}
         castShadow
         receiveShadow
         geometry={nodes["ship_red_accent"].geometry}

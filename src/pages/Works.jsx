@@ -26,7 +26,7 @@ function Works() {
   return (
     <>
       {isLoaded ? (
-        <div className="works-page page-content">
+        <main className="works-page page-content">
           {/* should this be dynamic */}
           <h1>Works</h1>
           <section className="works-list">
@@ -42,7 +42,7 @@ function Works() {
               />
             ))}
           </section>
-        </div>
+        </main>
       ) : (
         <ContentPlaceholder />
       )}

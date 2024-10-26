@@ -43,7 +43,7 @@ function Work() {
   return (
     <>
       {isLoaded ? (
-        <animated.div className="work-page page-content" style={fadeIn}>
+        <animated.main className="work-page page-content" style={fadeIn}>
           <NavLink className="nav-button back-button" to={`/works/`}>
             <img src="/arrow-left.svg" />
           </NavLink>
@@ -81,7 +81,7 @@ function Work() {
             className="work-wp-content"
             dangerouslySetInnerHTML={{ __html: restData.content.rendered }}
           ></div>
-        </animated.div>
+        </animated.main>
       ) : (
         <ContentPlaceholder />
       )}

@@ -35,7 +35,7 @@ function About() {
   return (
     <>
       {isLoaded ? (
-        <animated.div className="about-page page-content" style={fadeIn}>
+        <animated.main className="about-page page-content" style={fadeIn}>
           {/* title */}
           <h1>{restData.title.rendered}</h1>
           {/*content */}
@@ -43,7 +43,7 @@ function About() {
             className="work-wp-content"
             dangerouslySetInnerHTML={{ __html: restData.content.rendered }}
           ></div>
-        </animated.div>
+        </animated.main>
       ) : (
         <ContentPlaceholder />
       )}
