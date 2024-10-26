@@ -1,5 +1,5 @@
 import React from "react";
-import { useSpring, animated, useTrail } from "react-spring";
+import { animated, useTrail } from "react-spring";
 
 function Loading() {
   const fallingPillars = useTrail(10, {

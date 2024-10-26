@@ -1,12 +1,7 @@
 import React from "react";
-import { useMemo, useRef } from "react";
+import { useRef } from "react";
 import { useFrame, useLoader } from "@react-three/fiber";
 import * as THREE from "three";
-
-const fragmentShader = `
-void main() {
-  gl_FragColor = vec4(0.7,0, 0.4, 0.1);
-}`;
 
 function Ocean() {
   const mesh = useRef();
@@ -34,7 +29,7 @@ function Ocean() {
   rough.wrapT = THREE.RepeatWrapping;
   rough.repeat.set(150, 150);
 
-  useFrame((state) => {
+  useFrame(() => {
     height.offset.x += 0.005;
     normal.offset.x -= 0.005;
     light.offset.x += 0.005;
@@ -54,7 +49,6 @@ function Ocean() {
         normalMap={normal}
         roughnessMap={rough}
       />
-      {/* <shaderMaterial fragmentShader={fragmentShader} /> */}
     </mesh>
   );
 }

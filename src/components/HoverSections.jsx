@@ -1,5 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
-import { Html, Text } from "@react-three/drei";
+import React, { useEffect, useState } from "react";
 import {
   EffectComposer,
   Outline,
@@ -11,10 +10,6 @@ import {
 import { useNavigate } from "react-router-dom";
 
 //js island objects
-import testIsland from "../data/testIsland";
-import testProps from "../data/testProps";
-import tempIsland from "../data/tempIsland";
-import emptyProps from "../data/emptyProps";
 import bigIsland from "../data/bigIsland";
 import bigIslandProps from "../data/bigIslandProps";
 import experienceTiles from "../data/experienceTiles";

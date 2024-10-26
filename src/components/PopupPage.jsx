@@ -1,7 +1,6 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 //routing imports
 import { Routes, Route } from "react-router-dom";
-import { APP_FOLDER_NAME } from "../globals";
 import { useSpring, animated } from "react-spring";
 
 //pages
@@ -10,7 +9,6 @@ import About from "../pages/About";
 import Works from "../pages/Works";
 import Work from "../pages/Work";
 import Experience from "../pages/Experience";
-import Contact from "../pages/Contact";
 
 function PopupPage({ active, close, animationState, toggleAnimation }) {
   //animations
@@ -42,7 +40,6 @@ function PopupPage({ active, close, animationState, toggleAnimation }) {
         >
           <img src="/x-mark.svg" />
         </button>
-        {/* ROUTER GOES HERE */}
         <Routes>
           <Route path="/" exact element={<Home />} />
           <Route path="/about" element={<About />} />
