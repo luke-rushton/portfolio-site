@@ -7,11 +7,12 @@
   top: 0px;
   height: 100vh;
   z-index: 9999;
-  display: grid;
-  grid-template-columns: repeat(10, 1fr);
   pointer-events: none;
+  transition: 200;
 
   div {
-    background-color: $background-dark;
+    background-image: url("/blurred-background.webp");
+    background-position: center;
+    background-size: cover;
   }
 }

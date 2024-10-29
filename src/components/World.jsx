@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, Suspense } from "react";
 import { Canvas } from "@react-three/fiber";
 import { Sky } from "@react-three/drei";
 import Ocean from "./Ocean";
@@ -31,53 +31,53 @@ function World() {
 
   return (
     <div className="world">
-      <PopupPage
-        active={visibility}
-        close={() => {
-          isVisible("invisible");
-          navigate("/");
-        }}
-        animationState={state}
-        toggleAnimation={() => toggle(false)}
-      />
-      <Loading />
-      <DragInfo />
-      <Header
-        open={() => isVisible("visible")}
-        toggleAnimation={() => toggle(true)}
-      />
-      <Canvas
-        frameloop="demand"
-        camera={{ near: 0.1, far: 300, position: [-20, 4, 0] }}
-      >
-        <ambientLight intensity={Math.PI / 2} />
-        {/* boat */}
-        <Boat cameraRef={cameraRef} />
-        {/* lighting */}
-        <spotLight
-          decay={0.25}
-          position={[20, 200, 20]}
-          penumbra={0.9}
-          intensity={6}
-          angle={Math.PI / 2}
+      <Suspense fallback={<Loading />}>
+        <Canvas
+          frameloop="demand"
+          camera={{ near: 0.1, far: 300, position: [-20, 4, 0] }}
+        >
+          <ambientLight intensity={Math.PI / 2} />
+          {/* boat */}
+          <Boat cameraRef={cameraRef} />
+          {/* lighting */}
+          <spotLight
+            decay={0.25}
+            position={[20, 200, 20]}
+            penumbra={0.9}
+            intensity={6}
+            angle={Math.PI / 2}
+          />
+          <spotLight
+            decay={0.25}
+            position={[20, 20, 20]}
+            penumbra={0.9}
+            intensity={5}
+            angle={Math.PI / 3}
+          />
+          {/* ocean */}
+          <Ocean />
+          <Sky elevation={0} turbidity={0.01} />
+          <HoverSections
+            isVisible={isVisible}
+            toggleAnimation={() => toggle(true)}
+            cameraRef={cameraRef}
+          />
+        </Canvas>
+        <PopupPage
+          active={visibility}
+          close={() => {
+            isVisible("invisible");
+            navigate("/");
+          }}
+          animationState={state}
+          toggleAnimation={() => toggle(false)}
         />
-        <spotLight
-          decay={0.25}
-          position={[20, 20, 20]}
-          penumbra={0.9}
-          intensity={5}
-          angle={Math.PI / 3}
-        />
-        {/* ocean */}
-        <Ocean />
-        <Sky elevation={0} turbidity={0.01} />
-        <HoverSections
-          isVisible={isVisible}
+        <DragInfo />
+        <Header
+          open={() => isVisible("visible")}
           toggleAnimation={() => toggle(true)}
-          cameraRef={cameraRef}
         />
-      </Canvas>
-      {/* </Suspense> */}
+      </Suspense>
     </div>
   );
 }

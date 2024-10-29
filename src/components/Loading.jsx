@@ -1,24 +1,11 @@
 import React from "react";
 import { animated, useTrail } from "react-spring";
+import ContentPlaceholder from "./ContentPlaceholder";
 
 function Loading() {
-  const fallingPillars = useTrail(10, {
-    from: { y: "0%" },
-    to: { y: "100%" },
-    delay: 300,
-    config: {
-      mass: 5,
-      tension: 120,
-      friction: 14,
-      clamp: true,
-    },
-  });
-
   return (
     <div className="loading">
-      {fallingPillars.map(({ y }, i) => (
-        <animated.div key={i} style={{ y }}></animated.div>
-      ))}
+      <ContentPlaceholder />
     </div>
   );
 }
