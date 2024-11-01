@@ -41,7 +41,18 @@ function PopupPage({ active, close, animationState, toggleAnimation }) {
           <img src="/x-mark.svg" />
         </button>
         <Routes>
-          <Route path="/" exact element={<Home />} />
+          <Route
+            path="/"
+            exact
+            element={
+              <Home
+                close={() => {
+                  toggleAnimation();
+                  close();
+                }}
+              />
+            }
+          />
           <Route path="/about" element={<About />} />
           <Route path="/works" element={<Works />} />
           <Route path="/experience" element={<Experience />} />
