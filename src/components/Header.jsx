@@ -13,11 +13,12 @@ function Header({ open, toggleAnimation }) {
               open();
               toggleAnimation();
             }}
-            to={`/about`}
+            to={`/experience`}
           >
-            About
+            Experience
           </NavLink>
         </li>
+
         <li>
           <NavLink
             onClick={() => {
@@ -35,9 +36,9 @@ function Header({ open, toggleAnimation }) {
               open();
               toggleAnimation();
             }}
-            to={`/experience`}
+            to={`/about`}
           >
-            Experience
+            About
           </NavLink>
         </li>
         <li>
