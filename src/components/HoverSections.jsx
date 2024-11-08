@@ -195,7 +195,10 @@ function HoverSections({ isVisible, toggleAnimation, cameraRef }) {
         }}
         onClick={(e) => {
           e.stopPropagation();
-          window.open("mailto:luke.rushtonx@gmail.com", "_blank");
+          navigator.clipboard.writeText("luke.rushtonx@gmail.com");
+
+          // Alert the copied text
+          alert("Email address copied!");
         }}
       >
         <sphereGeometry args={[4, 8, 8]} />

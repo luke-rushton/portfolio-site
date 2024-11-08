@@ -52,9 +52,18 @@ function Header({ open, toggleAnimation }) {
           </a>
         </li>
         <li>
-          <a href="mailto:luke.rushtonx@gmail.com" target="_blank">
+          <button
+            href="#"
+            target="_blank"
+            onClick={() => {
+              navigator.clipboard.writeText("luke.rushtonx@gmail.com");
+
+              // Alert the copied text
+              alert("Email address copied!");
+            }}
+          >
             <img src="/gmail.svg" alt="Gmail Logo" />
-          </a>
+          </button>
         </li>
       </ul>
     </header>

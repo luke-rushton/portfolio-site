@@ -20,6 +20,12 @@ header {
     a {
       text-shadow: $brand-drop-shadow;
     }
+    button {
+      background-color: unset;
+      border: none;
+      padding: none;
+      cursor: pointer;
+    }
   }
   @media (min-width: $min-desktop) {
     //opacity: 50%;
