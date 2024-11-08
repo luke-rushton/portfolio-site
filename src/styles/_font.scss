@@ -44,7 +44,10 @@ h3 {
   }
 }
 
-p {
+p,
+strong,
+em,
+.wp-block-list li {
   font-family: Geist, "Inter", sans-serif;
   font-size: $paragraph;
   margin: 0.5rem 0rem;

@@ -35,9 +35,9 @@
     grid-template-columns: 1fr;
     column-gap: 0.5rem;
     margin-bottom: 2rem;
-    .preview-comment {
-      display: none;
-    }
+    //.preview-comment {
+    //display: none;
+    //}
     @media (min-width: 48em) {
       grid-template-columns: 2fr 1fr;
       column-gap: 1rem;

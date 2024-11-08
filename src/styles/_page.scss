@@ -15,14 +15,16 @@
   > * {
     grid-column: 2;
   }
-  img {
+  img,
+  video {
     height: auto;
     aspect-ratio: unset;
     width: unset;
     max-width: 100%;
     border-radius: $radius-medium;
   }
-  .wp-block-image {
+  .wp-block-image,
+  .wp-block-video {
     margin: 0 auto;
     display: block;
     width: fit-content;
